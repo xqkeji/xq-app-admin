@@ -1,0 +1,31 @@
+<?php
+return [
+	'vars'=>[
+		'icon'=>'key',
+		'type'=>'text',
+		'name'=>'captcha',
+	],
+	'elements'=>[
+		1=>[
+			'attributes'=>[
+				'style'=>'width:100px;float:left;'
+			],
+			'validators'=>[
+				1=>[
+					'captcha',
+				]
+			],
+		],
+		2=>[
+			'image',
+			'attributes'=>[
+				'src'=>$captcha_url,
+				'style'=>'cursor:pointer;margin-left:5px;margin-top:-2px;',
+				'onclick'=>'this.src="'.$captcha_url.'?b="+Math.random()',
+				'width'=>'150',
+				'height'=>'40',
+				'title'=>'点击刷新验证码',
+			],
+		]
+	],
+];
