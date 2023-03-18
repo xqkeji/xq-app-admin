@@ -1,7 +1,6 @@
 {
     "name": "xqkeji/xq-app-admin",
     "description": "一个基于新齐低代码开发框架后台管理的系统管理模块",
-    "version": "1.0.0",
     "type": "library",
     "license": "SSPL-1.0",
     "autoload": {
