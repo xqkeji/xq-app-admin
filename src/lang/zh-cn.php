@@ -1,5 +1,31 @@
 <?php
 return [
+	/*============系统管理=============*/
+	//管理员
+	'admin module auth'=>'系统管理',
+	'admin module user auth'=>'管理员管理',
+	'admin module user admin auth'=>'管理员列表',
+	'admin module user add auth'=>'添加管理员',
+	'admin module user edit auth'=>'编辑管理员',
+	'admin module user delete auth'=>'删除管理员',
+	'admin module user change auth'=>'修改管理员状态',
+	'admin module user b_delete auth'=>'批量删除管理员',
+	//角色
+	'admin module user_role auth'=>'角色管理',
+	'admin module user_role admin auth'=>'角色列表',
+	'admin module user_role add auth'=>'添加角色',
+	'admin module user_role edit auth'=>'编辑角色',
+	'admin module user_role delete auth'=>'删除角色',
+	'admin module user_role change auth'=>'修改角色状态',
+	'admin module user_role b_delete auth'=>'批量删除角色',
+	'add-role'=>'添加角色',
+	//配置管理
+	'admin module config auth'=>'配置管理',
+	'admin module config update_config auth'=>'更新网站配置',
+	'admin module config update_statics auth'=>'更新js、css文件',
+	//管理员密码
+	'admin change password'=>'修改密码',
+	/*===================================*/
 	'site title'=>'网站标题',
 	'logout'=>'退出登录',
 	'the static cache update success'=>'js、css资源缓存更新成功',

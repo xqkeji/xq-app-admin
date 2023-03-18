@@ -1,0 +1,280 @@
+/*!
+ * xq-admin-layout v1.0.1 (https://xqkeji.cn/demo/xq-adminpage)
+ * Author xqkeji.cn
+ * LICENSE SSPL-1.0
+ * Copyright 2023 xqkeji.cn
+ */
+ @charset "UTF-8";
+/*
+ * 后台框架样式变量
+ * -------------------------
+ */
+/* 顶部工具栏高度 */
+/* 页面底部的宽度 */
+/* 整个页面的可视范围的高度 */
+/* 页面左边的宽度 */
+/* 页面右边的宽度 */
+/* tabs页面标签栏的高度 */
+/* tabs页面标签栏按钮的宽度 */
+/*
+ * 后台框架顶部栏目
+ * -------------------------
+ */
+body {
+  height: auto;
+  min-width: 1024px;
+}
+
+html {
+  height: auto;
+}
+
+#xq-header {
+  height: 50px;
+}
+#xq-header > .col-2 {
+  width: 280px;
+}
+#xq-header > .col-10 {
+  width: calc(100% - 280px);
+}
+#xq-header.mini > .col-2 {
+  width: 65px;
+  padding-left: 15px;
+  padding-right: 0;
+}
+#xq-header.mini > .col-2 .xq-desc {
+  display: none;
+}
+#xq-header.mini > .col-10 {
+  width: calc(100vw - 65px);
+}
+#xq-header.mini > .col-10 .col-2 {
+  padding-right: 0 !important;
+}
+#xq-header a {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+#xq-header a span:first-child {
+  font-size: 24px;
+}
+#xq-header #xq-top-nav a {
+  color: rgb(255, 255, 255);
+}
+#xq-header #xq-top-menu .btn {
+  color: rgb(255, 255, 255);
+}
+#xq-header #xq-top-menu .dropdown-menu {
+  min-width: auto;
+}
+#xq-header #xq-top-menu .dropdown-menu .dropdown-item {
+  color: rgb(0, 0, 0);
+}
+
+/**
+ * Component: Sidebar
+ * ------------------
+ */
+#xq-sidebar {
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  padding-top: 0.2rem !important;
+  z-index: 999;
+  width: 280px;
+  flex: 0 0 auto;
+}
+#xq-sidebar p {
+  display: inline-block;
+  margin-bottom: 0;
+}
+#xq-sidebar .nav-item > .nav-link {
+  margin-bottom: 0.2rem;
+}
+#xq-sidebar .nav-item > ul {
+  display: block;
+  padding-left: 1rem;
+}
+#xq-sidebar .nav-item > ul > li {
+  list-style: none;
+}
+#xq-sidebar .nav-item > ul > li > .nav-link {
+  padding-left: 0.5rem;
+}
+#xq-sidebar.mini {
+  width: calc(65px - 10px);
+}
+#xq-sidebar.mini p {
+  display: none;
+  margin-bottom: 0;
+}
+#xq-sidebar.mini span.float-end {
+  display: none;
+}
+#xq-sidebar.mini .nav-item:hover > a > p {
+  display: inline-block;
+  position: absolute;
+  width: calc(280px - 65px);
+  left: calc(65px - 10px);
+  padding: 0.5rem 1rem;
+  background-color: inherit;
+  z-index: 999;
+  margin-top: -8px;
+}
+#xq-sidebar.mini .nav-item:hover > a > span.float-end {
+  position: absolute;
+  left: calc(280px - 30px);
+  display: block;
+  margin-top: -24px;
+  z-index: 9999;
+}
+#xq-sidebar.mini .nav-item:hover > ul {
+  position: absolute;
+  display: block;
+  width: calc(280px - 65px);
+  left: calc(65px - 10px);
+  z-index: 9999;
+  margin-top: -0.2rem;
+  background-color: rgb(33, 37, 41);
+}
+#xq-sidebar.mini .nav-item:hover > ul p {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  left: 0;
+  margin-top: 0;
+  padding: 0;
+}
+#xq-sidebar.mini .nav-item:hover > ul span.float-end {
+  display: block;
+  position: relative;
+  margin-top: 0;
+  left: 0;
+}
+#xq-sidebar.mini .nav-item:hover > ul ul {
+  position: relative;
+  width: 100%;
+  left: 0;
+  margin-top: 0;
+}
+#xq-sidebar.mini .nav-item > .nav-link {
+  margin-bottom: 0.2rem;
+}
+#xq-sidebar.mini .nav-item > ul {
+  display: none;
+}
+#xq-sidebar.mini > nav > ul > li > ul.d-block {
+  display: none !important;
+}
+#xq-sidebar.mini > nav > ul > li:hover > ul.d-block {
+  display: block !important;
+}
+#xq-sidebar .nav-link {
+  color: rgb(255, 255, 255) !important;
+}
+
+#xq-content {
+  height: calc(100vh - 50px - 42px);
+  min-height: calc(100vh - 50px - 42px);
+  margin-top: 50px;
+  margin-bottom: 42px;
+  width: calc(100% - 280px) !important;
+}
+#xq-content.mini {
+  width: calc(100vw - 65px + 10px) !important;
+}
+
+#xq-tab-header {
+  height: 42px;
+  background: #fafafa;
+  border-bottom: solid 2px #198754;
+  font-size: 12px;
+  border-top: 1px solid #ddd;
+}
+#xq-tab-header #xq-tab-left, #xq-tab-header #xq-tab-fullscreen, #xq-tab-header #xq-tab-right {
+  width: 40px;
+  line-height: 23px;
+  max-height: 42px;
+  text-align: center;
+  color: #475059;
+  background: #fff;
+  border: 0;
+  z-index: 99;
+}
+#xq-tab-header #xq-tab-left i, #xq-tab-header #xq-tab-fullscreen i, #xq-tab-header #xq-tab-right i {
+  font-size: 16px;
+}
+#xq-tab-header #xq-tab-nav {
+  width: calc(100% - 40px - 40px);
+  max-height: 42px;
+  overflow: hidden;
+  line-height: 23px;
+  border-bottom-width: 0;
+  border-bottom-style: none;
+}
+#xq-tab-header #xq-tab-nav ul {
+  width: max-content !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 42px;
+  max-height: 42px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+#xq-tab-header #xq-tab-nav ul :first-child {
+  margin-left: 0;
+}
+#xq-tab-header #xq-tab-nav ul :first-child a {
+  padding: 0.5rem 1rem;
+}
+#xq-tab-header #xq-tab-nav ul li a {
+  padding: 0.5rem 0.2rem 0.5rem 1rem;
+}
+#xq-tab-header #xq-tab-nav ul li a button.close {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: inherit;
+}
+#xq-tab-header #xq-tab-nav ul li a button.close span {
+  position: relative;
+  top: -0.8rem;
+  font-size: 0.85rem;
+}
+
+#xq-tab-content {
+  height: calc(100vh - 50px - 42px - 42px);
+}
+#xq-tab-content iframe {
+  height: calc(100vh - 50px - 42px - 42px);
+}
+
+.tab-content > .tab-pane {
+  padding-top: 5px;
+}
+
+#xq-tab-contentmenu {
+  width: max-content;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+#xq-footer {
+  height: 42px;
+  line-height: 40px;
+  margin-left: 280px;
+}
+#xq-footer.mini {
+  margin-left: calc(65px - 10px);
+}
+#xq-footer a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+/*# sourceMappingURL=xq-admin-layout.css.map */

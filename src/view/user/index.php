@@ -7,7 +7,7 @@
   <meta name="description" content="<?=xq_c('config','site_name')?>后台管理系统">
   <meta name="author" content="XqKeji">
   <title><?=xq_c('config','site_name')?>后台管理系统</title>
-  <?=$this->getAssetsCss('admin_layout_css')?>
+  <?=$this->getAssetsCss('admin-layout-css')?>
 </head>
 <body>
 <!--页面顶部-->
@@ -127,7 +127,7 @@
 <!--页面底部-->
 <footer id="xqkeji-footer" class="row no-gutters fixed-bottom bg-light border">
 	<div class="col-8 ps-4">
-		<strong>Copyright &copy; 2021 &nbsp; &nbsp;<a href="http://www.xqkeji.cn/">XqAdmin</a>. &nbsp; &nbsp;</strong>
+		<strong>Copyright &copy; 2021 &nbsp; &nbsp;<a href="https://www.xqkeji.cn/">XqAdmin</a>. &nbsp; &nbsp;</strong>
 		All rights reserved.
 	</div>
 	
@@ -137,7 +137,7 @@
 </footer>
 
 <?php
-echo $this->getAssetsJs('admin_layout_js');
+echo $this->getAssetsJs('admin-layout-js');
 $this->outputAsset();
 ?>
 </body>

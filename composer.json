@@ -1,5 +1,5 @@
 {
-    "name": "xqkeji/app-admin",
+    "name": "xqkeji/xq-app-admin",
     "description": "一个基于新齐低代码开发框架后台管理的系统管理模块",
     "version": "1.0.0",
     "type": "library",
@@ -14,5 +14,69 @@
             "name": "xqkeji.cn"
         }
     ],
+    "extra": {
+        "post-package-install":[
+            {
+                "cmd":["xqkeji\\composer\\Asset","copyDirs"],
+                "param":[{
+                    "resource/bootstrap/":"resource/bootstrap/",
+                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
+                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
+                    "resource/jquery/":"resource/jquery/",
+                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
+                    "resource/tinymce/":"resource/tinymce/",
+                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
+                    "resource/xq-admin-page/":"resource/xq-admin-page/",
+                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                }]
+            }
+        ],
+        "post-package-update":[
+            {
+                "cmd":["xqkeji\\composer\\Asset","rmDirs"],
+                "param":[{
+                    "resource/bootstrap/":"resource/bootstrap/",
+                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
+                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
+                    "resource/jquery/":"resource/jquery/",
+                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
+                    "resource/tinymce/":"resource/tinymce/",
+                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
+                    "resource/xq-admin-page/":"resource/xq-admin-page/",
+                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                }]
+            },
+            {
+                "cmd":["xqkeji\\composer\\Asset","copyDirs"],
+                "param":[{
+                    "resource/bootstrap/":"resource/bootstrap/",
+                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
+                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
+                    "resource/jquery/":"resource/jquery/",
+                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
+                    "resource/tinymce/":"resource/tinymce/",
+                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
+                    "resource/xq-admin-page/":"resource/xq-admin-page/",
+                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                }]
+            }
+        ],
+        "post-package-uninstall":[
+            {
+                "cmd":["xqkeji\\composer\\Asset","rmDirs"],
+                "param":[{
+                    "resource/bootstrap/":"resource/bootstrap/",
+                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
+                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
+                    "resource/jquery/":"resource/jquery/",
+                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
+                    "resource/tinymce/":"resource/tinymce/",
+                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
+                    "resource/xq-admin-page/":"resource/xq-admin-page/",
+                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                }]
+            }
+        ]
+    },
     "require": {}
 }
