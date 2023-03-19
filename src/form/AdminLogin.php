@@ -10,13 +10,13 @@ return [
 		[
 			'text',
 			'name'=>'username',
-			'var_icon'=>'user',
+			'var_icon'=>'bi bi-person-circle',
 			'attr_placeholder'=>'请输入登录账号',
 		],
 		[
 			'password',
 			'name'=>'password',
-			'var_icon'=>'lock',
+			'var_icon'=>'bi bi-key-fill',
 			'attr_placeholder'=>'请输入登录密码',
 		],
 		[
