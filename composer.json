@@ -18,16 +18,16 @@
             {
                 "cmd":["xqkeji\\composer\\Asset","copyDirs"],
                 "param":[{
-                    "resource/captcha/":"resource/captcha/",
-                    "resource/bootstrap/":"resource/bootstrap/",
-                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
-                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
-                    "resource/jquery/":"resource/jquery/",
-                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
-                    "resource/tinymce/":"resource/tinymce/",
-                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
-                    "resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                    "vendor/xqkeji/xq-app-admin/resource/captcha/":"resource/captcha/",
+                    "vendor/xqkeji/xq-app-admin/resource/bootstrap/":"resource/bootstrap/",
+                    "vendor/xqkeji/xq-app-admin/resource/bootstrap-icons/":"resource/bootstrap-icons/",
+                    "vendor/xqkeji/xq-app-admin/resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
+                    "vendor/xqkeji/xq-app-admin/resource/jquery/":"resource/jquery/",
+                    "vendor/xqkeji/xq-app-admin/resource/overlayscrollbars/":"resource/overlayscrollbars/",
+                    "vendor/xqkeji/xq-app-admin/resource/tinymce/":"resource/tinymce/",
+                    "vendor/xqkeji/xq-app-admin/resource/xq-admin-layout/":"resource/xq-admin-layout/",
+                    "vendor/xqkeji/xq-app-admin/resource/xq-admin-page/":"resource/xq-admin-page/",
+                    "vendor/xqkeji/xq-app-admin/resource/xq-treegrid/":"resource/xq-treegrid/"
                 }]
             }
         ],
@@ -50,16 +50,16 @@
             {
                 "cmd":["xqkeji\\composer\\Asset","copyDirs"],
                 "param":[{
-                    "resource/captcha/":"resource/captcha/",
-                    "resource/bootstrap/":"resource/bootstrap/",
-                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
-                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
-                    "resource/jquery/":"resource/jquery/",
-                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
-                    "resource/tinymce/":"resource/tinymce/",
-                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
-                    "resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                    "vendor/xqkeji/xq-app-admin/resource/captcha/":"resource/captcha/",
+                    "vendor/xqkeji/xq-app-admin/resource/bootstrap/":"resource/bootstrap/",
+                    "vendor/xqkeji/xq-app-admin/resource/bootstrap-icons/":"resource/bootstrap-icons/",
+                    "vendor/xqkeji/xq-app-admin/resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
+                    "vendor/xqkeji/xq-app-admin/resource/jquery/":"resource/jquery/",
+                    "vendor/xqkeji/xq-app-admin/resource/overlayscrollbars/":"resource/overlayscrollbars/",
+                    "vendor/xqkeji/xq-app-admin/resource/tinymce/":"resource/tinymce/",
+                    "vendor/xqkeji/xq-app-admin/resource/xq-admin-layout/":"resource/xq-admin-layout/",
+                    "vendor/xqkeji/xq-app-admin/resource/xq-admin-page/":"resource/xq-admin-page/",
+                    "vendor/xqkeji/xq-app-admin/resource/xq-treegrid/":"resource/xq-treegrid/"
                 }]
             }
         ],
