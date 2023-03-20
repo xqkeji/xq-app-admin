@@ -33,6 +33,12 @@ return [
                 'bootstrap-icons/font/bootstrap-icons.css',
                 'xq-treegrid/dist/css/xq-treegrid.css',
             ]
-        ]
+        ],
+        'directory'=>[
+			'images'=>['xq-treegrid/dist/assets/images'],
+			'css/fonts'=>[
+					'bootstrap-icons/font/fonts'
+			],
+		],
     ]
 ];

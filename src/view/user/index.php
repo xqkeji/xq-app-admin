@@ -65,7 +65,7 @@
                 <div id="xq-tab-header" class="col-12 d-flex">
                     <!--Tab标签左移动按钮-->
                     <button id="xq-tab-left" >
-                        <i class="fa fa-backward"></i>
+                        <i class="bi bi-caret-left-square-fill"></i>
                     </button>
                     <!--Tab标签左移动按钮结束-->
                     <!--Tab标签栏-->
@@ -82,13 +82,13 @@
                     <!--Tab标签栏结束-->
                     <!--Tab标签右移动按钮-->
                     <button id="xq-tab-right">
-                    <i class="fa fa-forward" style="margin-left: 3px;"></i>
+                    <i class="bi bi-caret-right-square-fill" style="margin-left: 3px;"></i>
                     </button>
                     <!--Tab标签右移动按钮结束-->
                     
                     <!--全屏按钮-->
-                    <button id="xqkeji-tab-fullscreen">
-                    <i class="fa fa-arrows-alt"></i>
+                    <button id="xq-tab-fullscreen">
+                    <i class="bi bi-arrows-fullscreen"></i>
                     </button>
                     <!--全屏按钮结束-->
                 </div>
