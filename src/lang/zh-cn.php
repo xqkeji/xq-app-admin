@@ -26,6 +26,8 @@ return [
 	//管理员密码
 	'admin change password'=>'修改密码',
 	/*===================================*/
+	'Field csrf does not have the expected value'=>'csrf数据验证不通过，请重新再试一次！',
+	'login account or password error'=>'登录账号或密码错误',
 	'site title'=>'网站标题',
 	'logout'=>'退出登录',
 	'the static cache update success'=>'js、css资源缓存更新成功',
