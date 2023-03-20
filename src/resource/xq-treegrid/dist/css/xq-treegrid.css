@@ -4,7 +4,11 @@
  * LICENSE SSPL-1.0
  * Copyright 2023 xqkeji.cn
  */
- #xqkeji-page-body {
+ body {
+  min-width: 744px;
+}
+
+#xqkeji-page-body {
   margin-top: 0.2rem;
 }
 #xqkeji-page-body .table tbody tr td {

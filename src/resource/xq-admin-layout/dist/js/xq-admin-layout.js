@@ -4,41 +4,40 @@
  * LICENSE SSPL-1.0
  * Copyright 2023 xqkeji.cn
  */
- (function () {
-  'use strict';
+ "use strict";
+(() => {
+  // src/ts/xq-constant.ts
+  var TAB_FULL = "#xq-tab-fullscreen";
+  var TAB_LEFT = "#xq-tab-left";
+  var TAB_RIGHT = "#xq-tab-right";
+  var TAB_NAV = "#xq-tab-nav";
+  var TAB_NAV_UL = "#xq-tab-nav-ul";
+  var TAB_ACTIVE = "#xq-tab-nav-ul>li>a.active";
+  var TAB_RIGT_MENU = "#xq-tab-contentmenu";
+  var TAB_REFRESH = "#xq-tab-refresh";
+  var TAB_CLOSE_ALL = "#xq-tab-close-all";
+  var TAB_CLOSE_OTHER = "#xq-tab-close-other";
+  var SIDEBAR = "#xq-sidebar";
+  var FILEINPUT_CLASS = ".xq-fileinput";
+  var MODULE_MENU = "#xq-top-nav";
+  var SIDEBAR_MINI_NAME = "mini";
+  var SIDEBAR_MENU_BTN = '[xq-widget="xq-mini-menu"]';
+  var LAYOUT_HEADER = "#xq-header";
+  var LAYOUT_CONTENT = "#xq-content";
+  var LAYOUT_FOOTER = "#xq-footer";
+  var CAPTCHA_CLASS = ".xq-captcha";
+  var TAB_CONTENT = "#xq-tab-content";
+  var TAB_CLOSE = "#xq-tab-nav-ul .nav-item .nav-link button.close";
+  var TAB_ALL_SWITCH = "#xq-tab-nav-ul .nav-item .nav-link";
+  var TAB_MENU_CLASS = "xq-menu";
+  var SIDERBAR_A_CLASS_ACTIVE = "bg-primary";
+  var SIDERBAR_A_CLASS = "bg-dark";
+  var LOGOUT_CLASS = ".xq-logout";
+  var MENU_OPEN_CLASS = "bi-chevron-down";
+  var MENU_CLOSE_CLASS = "bi-chevron-left";
 
-  const xqUtil = require('xq-util');
-
-  const TAB_FULL = "#xq-tab-fullscreen";
-  const TAB_LEFT = "#xq-tab-left";
-  const TAB_RIGHT = "#xq-tab-right";
-  const TAB_NAV = "#xq-tab-nav";
-  const TAB_NAV_UL = "#xq-tab-nav-ul";
-  const TAB_ACTIVE = "#xq-tab-nav-ul>li>a.active";
-  const TAB_RIGT_MENU = "#xq-tab-contentmenu";
-  const TAB_REFRESH = "#xq-tab-refresh";
-  const TAB_CLOSE_ALL = "#xq-tab-close-all";
-  const TAB_CLOSE_OTHER = "#xq-tab-close-other";
-  const SIDEBAR = "#xq-sidebar";
-  const FILEINPUT_CLASS = ".xq-fileinput";
-  const MODULE_MENU = "#xq-top-nav";
-  const SIDEBAR_MINI_NAME = "mini";
-  const SIDEBAR_MENU_BTN = '[xq-widget="xq-mini-menu"]';
-  const SIDEBAR_HEADER = "#xq-header";
-  const SIDEBAR_CONTENT = "#xq-content";
-  const SIDEBAR_FOOTER = "#xq-footer";
-  const CAPTCHA_CLASS = ".xq-captcha";
-  const TAB_CONTENT = "#xq-tab-content";
-  const TAB_CLOSE = "#xq-tab-nav-ul .nav-item .nav-link button.close";
-  const TAB_ALL_SWITCH = "#xq-tab-nav-ul .nav-item .nav-link";
-  const TAB_MENU_CLASS = "xq-menu";
-  const SIDERBAR_A_CLASS_ACTIVE = "bg-primary";
-  const SIDERBAR_A_CLASS = "bg-dark";
-  const LOGOUT_CLASS = ".xq-logout";
-  const MENU_OPEN_CLASS = "bi-chevron-down";
-  const MENU_CLOSE_CLASS = "bi-chevron-left";
-
-  const bindCaptcha = () => {
+  // src/ts/xq-captcha.ts
+  var bindCaptcha = () => {
     const captcha = document.querySelector(CAPTCHA_CLASS);
     if (captcha) {
       captcha.addEventListener("click", (event) => {
@@ -55,7 +54,36 @@
     }
   };
 
-  const bindFileinput = () => {
+  // node_modules/xq-util/dist/index.mjs
+  var domReady = (callBack) => {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", callBack);
+    } else {
+      callBack();
+    }
+  };
+  var parents = (element, selector) => {
+    const parents2 = [];
+    let ancestor = element.parentNode;
+    while (ancestor && ancestor.nodeType === Node.ELEMENT_NODE && ancestor.nodeType !== 3) {
+      if (ancestor.matches(selector)) {
+        parents2.push(ancestor);
+      }
+      ancestor = ancestor.parentNode;
+    }
+    return parents2;
+  };
+  var append = (element, dom) => {
+    const node = document.createRange().createContextualFragment(dom);
+    element.append(node);
+  };
+  var after = (element, dom) => {
+    const node = document.createRange().createContextualFragment(dom);
+    element.after(node);
+  };
+
+  // src/ts/xq-fileinput.ts
+  var bindFileinput = () => {
     const fileinputs = document.querySelectorAll(FILEINPUT_CLASS);
     if (fileinputs && typeof jQuery !== void 0) {
       let config;
@@ -75,7 +103,7 @@
       }
     }
   };
-  const updateFileInputValue = (fileinput) => {
+  var updateFileInputValue = (fileinput) => {
     const fileinput_id = fileinput.getAttribute("id");
     const fileinput_value_id = fileinput_id.replace("-xq-fileinput", "");
     const fileinput_value = document.querySelector("#" + fileinput_value_id);
@@ -101,7 +129,8 @@
     }
   };
 
-  const bindLogout = () => {
+  // src/ts/xq-logout.ts
+  var bindLogout = () => {
     const xq_logouts = document.querySelectorAll(LOGOUT_CLASS);
     if (xq_logouts) {
       for (const xq_logout of xq_logouts) {
@@ -111,7 +140,7 @@
           const action = target.getAttribute("href");
           const id = "xq-logout-form-" + Math.floor(Math.random() * 1e3).toString();
           const logout_form_str = '<form action="' + action + '" method="post" style="display: none;" id="' + id + '"></form>';
-          xqUtil.append(document.body, logout_form_str);
+          append(document.body, logout_form_str);
           const logout_form = document.querySelector("#" + id);
           logout_form.submit();
         });
@@ -119,13 +148,16 @@
     }
   };
 
-  const Config = {
+  // src/ts/xq-sidebar-overlay.ts
+  var Config = {
     scrollbarTheme: "os-theme-light",
     scrollbarAutoHide: "leave"
   };
-  let _instance = null;
-  const init = () => {
-    if (typeof OverlayScrollbars !== "undefined") {
+  var _instance = null;
+  var OverlayScrollbars = null;
+  var initScrollbar = () => {
+    if (typeof OverlayScrollbarsGlobal !== "undefined") {
+      OverlayScrollbars = OverlayScrollbarsGlobal.OverlayScrollbars;
       if (!_instance) {
         _instance = OverlayScrollbars(document.querySelector(SIDEBAR), {
           // eslint-disable-line new-cap
@@ -139,14 +171,15 @@
       }
     }
   };
-  const destroy = () => {
+  var destroy = () => {
     if (_instance) {
       _instance.destroy();
       _instance = null;
     }
   };
 
-  const bindModuleMenu = () => {
+  // src/ts/xq-module-menu.ts
+  var bindModuleMenu = () => {
     const container = document.querySelector(MODULE_MENU);
     if (container !== null) {
       const menus = container.querySelectorAll("li a:not([xq-widget])");
@@ -190,12 +223,13 @@
     }
   };
 
-  const bindMiniMenu = () => {
+  // src/ts/xq-mini-menu.ts
+  var bindMiniMenu = () => {
     const btn = document.querySelector(SIDEBAR_MENU_BTN);
     if (btn) {
       btn.addEventListener("click", (event) => {
         event.preventDefault();
-        const header = document.querySelector(SIDEBAR_HEADER);
+        const header = document.querySelector(LAYOUT_HEADER);
         if (header) {
           if (header.classList.contains(SIDEBAR_MINI_NAME)) {
             header.classList.remove(SIDEBAR_MINI_NAME);
@@ -207,13 +241,13 @@
         if (sidebar) {
           if (sidebar.classList.contains(SIDEBAR_MINI_NAME)) {
             sidebar.classList.remove(SIDEBAR_MINI_NAME);
-            init();
+            initScrollbar();
           } else {
             sidebar.classList.add(SIDEBAR_MINI_NAME);
             destroy();
           }
         }
-        const content = document.querySelector(SIDEBAR_CONTENT);
+        const content = document.querySelector(LAYOUT_CONTENT);
         if (content) {
           if (content.classList.contains(SIDEBAR_MINI_NAME)) {
             content.classList.remove(SIDEBAR_MINI_NAME);
@@ -221,7 +255,7 @@
             content.classList.add(SIDEBAR_MINI_NAME);
           }
         }
-        const footer = document.querySelector(SIDEBAR_FOOTER);
+        const footer = document.querySelector(LAYOUT_FOOTER);
         if (footer) {
           if (footer.classList.contains(SIDEBAR_MINI_NAME)) {
             footer.classList.remove(SIDEBAR_MINI_NAME);
@@ -233,7 +267,8 @@
     }
   };
 
-  const getPrevTab = (current) => {
+  // src/ts/tabs/xq-prev-tab.ts
+  var getPrevTab = (current) => {
     let prev = null;
     const tab_ul = document.querySelector(TAB_NAV_UL);
     const lis = tab_ul.querySelectorAll("li");
@@ -246,7 +281,8 @@
     return prev;
   };
 
-  const activeTabById = (id) => {
+  // src/ts/tabs/xq-active-tab.ts
+  var activeTabById = (id) => {
     const tab_nav = document.querySelector(TAB_NAV_UL);
     const tab_content = document.querySelector(TAB_CONTENT);
     const tab = tab_nav.querySelector("li > a#" + id + "-tab");
@@ -270,7 +306,7 @@
     }
     scrollTyId(id);
   };
-  const scrollTyId = (id) => {
+  var scrollTyId = (id) => {
     const tab = document.querySelector(TAB_NAV);
     const tab_ul = document.querySelector(TAB_NAV_UL);
     const first_el = tab_ul.querySelector("li:first-child");
@@ -298,13 +334,14 @@
     }
   };
 
-  const bindCloses = () => {
+  // src/ts/tabs/xq-close.ts
+  var bindCloses = () => {
     const closes = document.querySelectorAll(TAB_CLOSE);
     for (const close of closes) {
       bindClose(close);
     }
   };
-  const bindClose = (close) => {
+  var bindClose = (close) => {
     close.addEventListener("click", (event) => {
       event.preventDefault();
       const tab_content = document.querySelector(TAB_CONTENT);
@@ -329,7 +366,8 @@
     });
   };
 
-  const bindAllSwitch = () => {
+  // src/ts/tabs/xq-switch.ts
+  var bindAllSwitch = () => {
     const all_switch = document.querySelectorAll(TAB_ALL_SWITCH);
     for (const el of all_switch) {
       const id = el.getAttribute("id");
@@ -338,7 +376,7 @@
       }
     }
   };
-  const bindSwitch = (id) => {
+  var bindSwitch = (id) => {
     const tab_nav = document.querySelector(TAB_NAV_UL);
     const tab = tab_nav.querySelector("li > a#" + id + "-tab");
     if (tab) {
@@ -350,7 +388,8 @@
     }
   };
 
-  const closeTabs = (isAll) => {
+  // src/ts/toolbar/xq-close-tabs.ts
+  var closeTabs = (isAll) => {
     if (isAll) {
       const tabs = document.querySelector(TAB_NAV_UL);
       const closes = tabs.querySelectorAll("li a button.close");
@@ -389,10 +428,13 @@
     }
   };
 
-  const bindRightMenu = (li) => {
+  // src/ts/toolbar/xq-rightmenu.ts
+  var _current_tab = null;
+  var bindRightMenu = (li) => {
     li.addEventListener("contextmenu", (event) => {
       event.preventDefault();
-      event.currentTarget;
+      const target = event.currentTarget;
+      _current_tab = target;
       const pageY = event.pageY;
       const pageX = event.pageX;
       const right_menu = document.querySelector(TAB_RIGT_MENU);
@@ -401,7 +443,7 @@
       right_menu.style.display = "block";
     });
   };
-  const rightMenu = () => {
+  var rightMenu = () => {
     const tab_ul = document.querySelector(TAB_NAV_UL);
     if (tab_ul !== null) {
       const lis = tab_ul.querySelectorAll("li>a");
@@ -410,7 +452,7 @@
       }
     }
   };
-  const closeRightMenu = (e) => {
+  var closeRightMenu = (e) => {
     const target = e.currentTarget;
     let right_menu = document.querySelector(TAB_RIGT_MENU);
     if (right_menu === null) {
@@ -420,7 +462,7 @@
       right_menu.style.display = "none";
     }
   };
-  const bindRightMenuOper = () => {
+  var bindRightMenuOper = () => {
     const refresh_tab = document.querySelector(TAB_REFRESH);
     const tab_close_all = document.querySelector(TAB_CLOSE_ALL);
     const tab_close_other = document.querySelector(TAB_CLOSE_OTHER);
@@ -454,16 +496,17 @@
     }
   };
 
-  const addTab = (id, title, url) => {
+  // src/ts/tabs/xq-add-tab.ts
+  var addTab = (id, title, url) => {
     let refresh = false;
     const tab_nav = document.querySelector(TAB_NAV_UL);
     const tab_content = document.querySelector(TAB_CONTENT);
     const tab = tab_nav.querySelector("li > a#" + id + "-tab");
     if (tab === null) {
       let dom_str = '<li class="nav-item" role="presentation"><a class="nav-link" id="' + id + '-tab" data-bs-toggle="tab" data-bs-target="#' + id + '-tab-content" type="button" role="tab" aria-controls="' + id + '-tab-content" aria-selected="false">' + title + '<button type="button" class="close" aria-label="\u5173\u95ED"><span aria-hidden="true">&times;</span></button></a></li>';
-      xqUtil.append(tab_nav, dom_str);
+      append(tab_nav, dom_str);
       dom_str = '<div class="tab-pane" id="' + id + '-tab-content" role="tabpanel" aria-labelledby="' + id + '-tab" ><iframe src="' + url + '" width="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div>';
-      xqUtil.append(tab_content, dom_str);
+      append(tab_content, dom_str);
       bindSwitch(id);
       activeTabById(id);
       const tab_a = document.querySelector("#" + id + "-tab");
@@ -486,7 +529,8 @@
     }
   };
 
-  const bindClick = (menus) => {
+  // src/ts/tabs/xq-menus.ts
+  var bindClick = (menus) => {
     for (const menu of menus) {
       if (!menu.classList.contains(TAB_MENU_CLASS)) {
         menu.addEventListener("click", (event) => {
@@ -510,7 +554,7 @@
           const t_classlist = target_el.classList;
           t_classlist.remove(SIDERBAR_A_CLASS);
           t_classlist.add(SIDERBAR_A_CLASS_ACTIVE);
-          const top_parent = xqUtil.parents(target_el, SIDEBAR + " nav>ul>li")[0];
+          const top_parent = parents(target_el, SIDEBAR + " nav>ul>li")[0];
           const parent = target_el.parentElement;
           if (top_parent !== parent) {
             const top_el = top_parent.querySelector("a");
@@ -562,7 +606,7 @@
                       }
                     }
                     html += "</ul>";
-                    xqUtil.after(target_el, html);
+                    after(target_el, html);
                     const li2 = target_el.parentNode;
                     const ul2 = li2.querySelector("ul");
                     i_el.classList.remove(MENU_CLOSE_CLASS);
@@ -599,7 +643,8 @@
     }
   };
 
-  const tabInit = () => {
+  // src/ts/tabs/xq-init.ts
+  var tabInit = () => {
     bindCloses();
     bindAllSwitch();
     const menus = document.querySelectorAll(SIDEBAR + " a:not(" + LOGOUT_CLASS + ")");
@@ -607,7 +652,8 @@
     bindLogout();
   };
 
-  const fullscreen = () => {
+  // src/ts/toolbar/xq-fullscreen.ts
+  var fullscreen = () => {
     const isFullScreen = document.fullscreenElement ?? document.msFullscreenElement ?? document.mozFullScreenElement ?? document.webkitFullscreenElement ?? false;
     if (!isFullScreen) {
       const de = document.documentElement;
@@ -622,7 +668,7 @@
       }
     }
   };
-  const bindFullscreen = () => {
+  var bindFullscreen = () => {
     const fullBtn = document.querySelector(TAB_FULL);
     if (fullBtn !== null) {
       fullBtn.addEventListener("click", (event) => {
@@ -632,12 +678,13 @@
     }
   };
 
-  const activeTab = () => {
+  // src/ts/toolbar/xq-scroll-tab.ts
+  var activeTab = () => {
     const tab_ul = document.querySelector(TAB_NAV_UL);
     const active = tab_ul.querySelector(".active");
     return active;
   };
-  const scrollLeft = () => {
+  var scrollLeft = () => {
     const tab = document.querySelector(TAB_NAV);
     const tab_ul = document.querySelector(TAB_NAV_UL);
     const first_el = tab_ul.querySelector("li:first-child");
@@ -663,7 +710,7 @@
       first_el.style.marginLeft = "0px";
     }
   };
-  const scrollRight = () => {
+  var scrollRight = () => {
     const tab = document.querySelector(TAB_NAV);
     const tab_ul = document.querySelector(TAB_NAV_UL);
     const first_el = tab_ul.querySelector("li:first-child");
@@ -690,7 +737,7 @@
       first_el.style.marginLeft = "0px";
     }
   };
-  const bindScrollLeft = () => {
+  var bindScrollLeft = () => {
     const leftBtn = document.querySelector(TAB_LEFT);
     if (leftBtn !== null) {
       leftBtn.addEventListener("click", (event) => {
@@ -699,7 +746,7 @@
       });
     }
   };
-  const bindScrollRight = () => {
+  var bindScrollRight = () => {
     const rightBtn = document.querySelector(TAB_RIGHT);
     if (rightBtn !== null) {
       rightBtn.addEventListener("click", (event) => {
@@ -709,7 +756,8 @@
     }
   };
 
-  const toolbarInit = () => {
+  // src/ts/toolbar/xq-init.ts
+  var toolbarInit = () => {
     bindFullscreen();
     bindScrollLeft();
     bindScrollRight();
@@ -721,7 +769,8 @@
     bindRightMenuOper();
   };
 
-  const bindMessage = () => {
+  // src/ts/xq-postmessage.ts
+  var bindMessage = () => {
     window.addEventListener("message", (e) => {
       const message = e.data;
       const callback = message.callback;
@@ -733,20 +782,30 @@
     });
   };
 
-  const xqAdminPage = () => {
+  // src/ts/index.ts
+  var xqAdminLayout = () => {
     bindCaptcha();
     bindFileinput();
     bindLogout();
-    init();
+    initScrollbar();
     bindModuleMenu();
     bindMiniMenu();
     tabInit();
     toolbarInit();
     bindMessage();
   };
-  xqUtil.domReady(() => {
-    xqAdminPage();
+  domReady(() => {
+    xqAdminLayout();
   });
   window.xqAddTab = addTab;
-
 })();
+/*! Bundled license information:
+
+xq-util/dist/index.mjs:
+  (*!
+   * xq-util v1.0.1 (http://xqkeji.cn/)
+   * Author xqkeji.cn
+   * LICENSE SSPL-1.0
+   * Copyright 2023 xqkeji.cn
+   *)
+*/

@@ -205,15 +205,19 @@ const bindEdit = (element) => {
         }
         const text = node.querySelector("#name_" + id);
         name = text.getAttribute("value") + "\u8BBE\u7F6E";
-        if (window.parent.window.xqAddTab !== void 0) {
-          window.parent.window.xqAddTab("treegrid-edit-" + id, name, url);
+        if (window !== window.parent) {
+          const tabId = "treegrid-edit-" + id;
+          const message = { "callback": "xqAddTab", "params": [tabId, name, url] };
+          window.parent.postMessage(message, "*");
         } else {
           const form = document.querySelector("#xq-not-tab-url");
-          if (form) {
+          const formId = document.querySelector("#xq-not-tab-url-id");
+          if (form && formId) {
             form.setAttribute("action", url);
+            formId.setAttribute("value", id);
             form.submit();
           } else {
-            const template = '<form id="xq-not-tab-url" target="_blank" action="' + url + '" method="get"></form>';
+            const template = '<form id="xq-not-tab-url" target="_blank" action="' + url + '" method="get"><input type="hidden" id="xq-not-tab-url-id" name="id" value="' + id + '"/></form>';
             xqUtil.append(document.body, template);
             const form2 = document.querySelector("#xq-not-tab-url");
             form2.submit();

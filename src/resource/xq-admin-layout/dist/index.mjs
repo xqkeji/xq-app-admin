@@ -21,9 +21,9 @@ const FILEINPUT_CLASS = ".xq-fileinput";
 const MODULE_MENU = "#xq-top-nav";
 const SIDEBAR_MINI_NAME = "mini";
 const SIDEBAR_MENU_BTN = '[xq-widget="xq-mini-menu"]';
-const SIDEBAR_HEADER = "#xq-header";
-const SIDEBAR_CONTENT = "#xq-content";
-const SIDEBAR_FOOTER = "#xq-footer";
+const LAYOUT_HEADER = "#xq-header";
+const LAYOUT_CONTENT = "#xq-content";
+const LAYOUT_FOOTER = "#xq-footer";
 const CAPTCHA_CLASS = ".xq-captcha";
 const TAB_CONTENT = "#xq-tab-content";
 const TAB_CLOSE = "#xq-tab-nav-ul .nav-item .nav-link button.close";
@@ -121,8 +121,10 @@ const Config = {
   scrollbarAutoHide: "leave"
 };
 let _instance = null;
-const init = () => {
-  if (typeof OverlayScrollbars !== "undefined") {
+let OverlayScrollbars = null;
+const initScrollbar = () => {
+  if (typeof OverlayScrollbarsGlobal !== "undefined") {
+    OverlayScrollbars = OverlayScrollbarsGlobal.OverlayScrollbars;
     if (!_instance) {
       _instance = OverlayScrollbars(document.querySelector(SIDEBAR), {
         // eslint-disable-line new-cap
@@ -192,7 +194,7 @@ const bindMiniMenu = () => {
   if (btn) {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
-      const header = document.querySelector(SIDEBAR_HEADER);
+      const header = document.querySelector(LAYOUT_HEADER);
       if (header) {
         if (header.classList.contains(SIDEBAR_MINI_NAME)) {
           header.classList.remove(SIDEBAR_MINI_NAME);
@@ -204,13 +206,13 @@ const bindMiniMenu = () => {
       if (sidebar) {
         if (sidebar.classList.contains(SIDEBAR_MINI_NAME)) {
           sidebar.classList.remove(SIDEBAR_MINI_NAME);
-          init();
+          initScrollbar();
         } else {
           sidebar.classList.add(SIDEBAR_MINI_NAME);
           destroy();
         }
       }
-      const content = document.querySelector(SIDEBAR_CONTENT);
+      const content = document.querySelector(LAYOUT_CONTENT);
       if (content) {
         if (content.classList.contains(SIDEBAR_MINI_NAME)) {
           content.classList.remove(SIDEBAR_MINI_NAME);
@@ -218,7 +220,7 @@ const bindMiniMenu = () => {
           content.classList.add(SIDEBAR_MINI_NAME);
         }
       }
-      const footer = document.querySelector(SIDEBAR_FOOTER);
+      const footer = document.querySelector(LAYOUT_FOOTER);
       if (footer) {
         if (footer.classList.contains(SIDEBAR_MINI_NAME)) {
           footer.classList.remove(SIDEBAR_MINI_NAME);
@@ -730,11 +732,11 @@ const bindMessage = () => {
   });
 };
 
-const xqAdminPage = () => {
+const xqAdminLayout = () => {
   bindCaptcha();
   bindFileinput();
   bindLogout();
-  init();
+  initScrollbar();
   bindModuleMenu();
   bindMiniMenu();
   tabInit();
@@ -742,6 +744,6 @@ const xqAdminPage = () => {
   bindMessage();
 };
 domReady(() => {
-  xqAdminPage();
+  xqAdminLayout();
 });
 window.xqAddTab = addTab;
