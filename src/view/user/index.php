@@ -127,12 +127,12 @@
 <!--页面底部-->
 <footer id="xq-footer" class="row no-gutters fixed-bottom bg-light border">
 	<div class="col-8 ps-4">
-		<strong>Copyright &copy; 2021 &nbsp; &nbsp;<a href="https://www.xqkeji.cn/">XqAdmin</a>. &nbsp; &nbsp;</strong>
+		<strong>Copyright &copy; <?=date('Y')?> &nbsp; &nbsp;<a href="https://www.xqkeji.cn/"><?=xq_p('xq-app-name','xq-app-name')?></a>. &nbsp; &nbsp;</strong>
 		All rights reserved.
 	</div>
 	
     <div class="col-4 text-end pe-4">
-      <b>Version</b> 1.0
+      <b>Version</b> <?=xq_p('xq-app-version','1.0')?>
     </div>
 </footer>
 
