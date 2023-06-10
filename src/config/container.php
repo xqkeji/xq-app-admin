@@ -2,33 +2,33 @@
 return [
 	'assets'=>[
         'js'=>[
-            'admin-layout-js'=>[
+            'xq-admin-layout'=>[
                 'bootstrap/dist/js/bootstrap.bundle.js',
                 'overlayscrollbars/browser/overlayscrollbars.browser.es5.js',
                 'xq-admin-layout/dist/js/xq-admin-layout.js',
             ],
-            'admin-page-js'=>[
+            'xq-admin-page'=>[
                 'bootstrap/dist/js/bootstrap.bundle.js',
                 'xq-admin-page/dist/js/xq-admin-page.js',
             ],
-            'admin-treegrid-js'=>[
+            'xq-admin-treegrid'=>[
                 'bootstrap/dist/js/bootstrap.bundle.js',
                 'xq-treegrid/dist/js/xq-treegrid.js',
             ],
         ],
         'css'=>[
-            'admin-layout-css'=>[
+            'xq-admin-layout'=>[
                 'bootstrap/dist/css/bootstrap.css',
                 'bootstrap-icons/font/bootstrap-icons.css',
                 'overlayscrollbars/styles/overlayscrollbars.css',
                 'xq-admin-layout/dist/css/xq-admin-layout.css',
             ],
-            'admin-page-css'=>[
+            'xq-admin-page'=>[
                 'bootstrap/dist/css/bootstrap.css',
                 'bootstrap-icons/font/bootstrap-icons.css',
                 'xq-admin-page/dist/css/xq-admin-page.css',
             ],
-            'admin-treegrid-css'=>[
+            'xq-admin-treegrid'=>[
                 'bootstrap/dist/css/bootstrap.css',
                 'bootstrap-icons/font/bootstrap-icons.css',
                 'xq-treegrid/dist/css/xq-treegrid.css',

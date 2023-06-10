@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="新齐通用后台管理系统-登录">
   <meta name="author" content="xqkeji.cn">
-  <?=$this->getAssetsCss('admin-page-css')?>
+  <?=$this->getAssetsCss('xq-admin-page')?>
 </head>
 <body class="bg-dark">
 <div class="container-fluid">
@@ -28,7 +28,7 @@
         </div>
     </div>
 </div>
-<?=$this->getAssetsJs('admin-page-js')?>
+<?=$this->getAssetsJs('xq-admin-page')?>
 </body>
 </html>
 

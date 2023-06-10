@@ -7,7 +7,7 @@
   <meta name="description" content="<?=xq_c('config','site_name')?>后台管理系统">
   <meta name="author" content="XqKeji">
   <title><?=xq_c('config','site_name')?>后台管理系统</title>
-  <?=$this->getAssetsCss('admin-layout-css')?>
+  <?=$this->getAssetsCss('xq-admin-layout')?>
 </head>
 <body>
 <!--页面顶部-->
@@ -137,7 +137,7 @@
 </footer>
 
 <?php
-echo $this->getAssetsJs('admin-layout-js');
+echo $this->getAssetsJs('xq-admin-layout');
 $this->outputAsset();
 ?>
 </body>

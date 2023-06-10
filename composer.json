@@ -81,5 +81,8 @@
             }
         ]
     },
-    "require": {}
+    "require": {
+        "xqkeji/xq-app-base": "^1.0",
+        "xqkeji/xq-app-attach": "^1.0"
+    }
 }
