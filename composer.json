@@ -82,6 +82,7 @@
         ]
     },
     "require": {
+        "xqkeji/composer":"^1.0",
         "xqkeji/xq-app-base": "^1.0",
         "xqkeji/xq-app-attach": "^1.0"
     }
