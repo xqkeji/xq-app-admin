@@ -89,7 +89,7 @@
   // src/ts/xq-build.ts
   var build = (table2) => {
     if (table2) {
-      const tbody = table2.querySelector("tbody");
+      let tbody = table2.querySelector("tbody");
       if (tbody && tbody.querySelectorAll("tr").length > 1) {
         const firstTr = tbody.querySelector("tbody>tr:first-child");
         const firstId = firstTr.getAttribute("id");
@@ -105,6 +105,7 @@
           const trId = tr.getAttribute("id");
           innerbody.setAttribute("id", "tbody_" + trId);
           tbody.after(innerbody);
+          tbody = innerbody;
         }
       }
     }

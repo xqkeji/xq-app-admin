@@ -305,7 +305,7 @@ const bindDrag = () => {
   const dragClass = getOption("dragClass");
   const dragger_table = document.querySelector(dragClass);
   if (dragger_table) {
-    const tbody = dragger_table.querySelector("tbody");
+    let tbody = dragger_table.querySelector("tbody");
     if (tbody) {
       const firstTr = tbody.querySelector("tbody>tr:first-child");
       const firstId = firstTr.getAttribute("id");
@@ -321,6 +321,7 @@ const bindDrag = () => {
         const trId = tr.getAttribute("id");
         innerbody.setAttribute("id", "tbody_" + trId);
         tbody.after(innerbody);
+        tbody = innerbody;
       }
     }
     sortable(dragClass, {

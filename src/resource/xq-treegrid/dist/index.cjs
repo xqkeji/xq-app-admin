@@ -89,7 +89,7 @@ const checkAll = () => {
 
 const build = (table) => {
   if (table) {
-    const tbody = table.querySelector("tbody");
+    let tbody = table.querySelector("tbody");
     if (tbody && tbody.querySelectorAll("tr").length > 1) {
       const firstTr = tbody.querySelector("tbody>tr:first-child");
       const firstId = firstTr.getAttribute("id");
@@ -105,6 +105,7 @@ const build = (table) => {
         const trId = tr.getAttribute("id");
         innerbody.setAttribute("id", "tbody_" + trId);
         tbody.after(innerbody);
+        tbody = innerbody;
       }
     }
   }
