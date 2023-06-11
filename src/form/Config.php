@@ -20,6 +20,11 @@ return [
 					'name'=>'site_domain',
 					'text'=>'网站域名',
 				],
+				[
+					'fileinput',
+					'name'=>'site_logo',
+					'text'=>'网站LOGO',
+				],
 			],
 		],
 		[

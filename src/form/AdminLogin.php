@@ -25,7 +25,7 @@ return [
 			'name'=>'captcha',
 			'attr_placeholder'=>'验证码',
 			'attr_style'=>'float:left;',
-			'var_url'=>'/admin/user/captcha',
+			'var_url'=>xq_url('user/captcha'),
 		],
 		'csrf',
 		[
