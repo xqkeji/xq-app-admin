@@ -29,6 +29,9 @@
                     "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-page/":"resource/xq-admin-page/",
                     "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/"
                 }]
+            },
+            {
+                "cmd":["xqkeji\\app\\admin\\composer\\Install","postInstall"]
             }
         ],
         "post-package-update":[
