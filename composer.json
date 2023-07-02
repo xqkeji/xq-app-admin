@@ -27,7 +27,8 @@
                     "vendor/xqkeji/xq-app-admin/src/resource/tinymce/":"resource/tinymce/",
                     "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-layout/":"resource/xq-admin-layout/",
                     "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/"
+                    "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/",
+                    "vendor/xqkeji/xq-app-admin/src/resource/xq-tab-form/":"resource/xq-tab-form/"
                 }]
             },
             {
@@ -47,7 +48,8 @@
                     "resource/tinymce/":"resource/tinymce/",
                     "resource/xq-admin-layout/":"resource/xq-admin-layout/",
                     "resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                    "resource/xq-treegrid/":"resource/xq-treegrid/",
+                    "resource/xq-tab-form/":"resource/xq-tab-form/"
                 }]
             },
             {
@@ -62,7 +64,8 @@
                     "vendor/xqkeji/xq-app-admin/src/resource/tinymce/":"resource/tinymce/",
                     "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-layout/":"resource/xq-admin-layout/",
                     "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/"
+                    "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/",
+                    "vendor/xqkeji/xq-app-admin/src/resource/xq-tab-form/":"resource/xq-tab-form/"
                 }]
             }
         ],
@@ -79,7 +82,8 @@
                     "resource/tinymce/":"resource/tinymce/",
                     "resource/xq-admin-layout/":"resource/xq-admin-layout/",
                     "resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "resource/xq-treegrid/":"resource/xq-treegrid/"
+                    "resource/xq-treegrid/":"resource/xq-treegrid/",
+                    "resource/xq-tab-form/":"resource/xq-tab-form/"
                 }]
             }
         ]

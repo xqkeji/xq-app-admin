@@ -1,5 +1,5 @@
 /*!
- * xq-treegrid v1.0.4 (https://xqkeji.cn/demo/xq-treegrid/)
+ * xq-treegrid v1.0.7 (https://xqkeji.cn/demo/xq-treegrid/)
  * Author xqkeji.cn
  * LICENSE SSPL-1.0
  * Copyright 2023 xqkeji.cn
@@ -1608,7 +1608,7 @@
       if (!isExistChildNode(parentId)) {
         parent.setAttribute("is_leaf", "1");
       }
-      reinitNode(parent);
+      reinitNode(parent, true);
     }
   };
   var eqNode = (element, previous) => {
@@ -1689,7 +1689,7 @@
     initExpander(element);
     initIndent(element);
   };
-  var reinitNode = (element) => {
+  var reinitNode = (element, is_parent = false) => {
     initNode(element);
     if (!isLeaf(element)) {
       const id = getNodeId(element);
@@ -1698,7 +1698,7 @@
       let previousBody = elementBody;
       for (const child of children) {
         const childBody = child.parentElement;
-        if (previousBody !== childBody) {
+        if (previousBody !== childBody && !is_parent) {
           previousBody.after(childBody);
         }
         previousBody = childBody;
@@ -1801,6 +1801,10 @@
           }).then((data2) => {
             const node = table2.querySelector("tbody:last-of-type>tr");
             if (node === null) {
+              const empty_node = table2.querySelector("tbody:last-of-type");
+              if (empty_node !== null) {
+                empty_node.remove();
+              }
               addNode(table2, data2);
             } else {
               addNode(node, data2);
@@ -1853,6 +1857,9 @@
       next2 = next2.nextElementSibling;
       nextElement = next2.firstElementChild;
       elementDepth = Number.parseInt(nextElement.getAttribute("depth"), 10);
+      if (next2.tagName == "TFOOT") {
+        return null;
+      }
     }
     return null;
   };
