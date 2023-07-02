@@ -11,10 +11,6 @@ return [
                 'bootstrap/dist/js/bootstrap.bundle.js',
                 'xq-admin-page/dist/js/xq-admin-page.js',
             ],
-            'xq-admin-treegrid'=>[
-                'bootstrap/dist/js/bootstrap.bundle.js',
-                'xq-treegrid/dist/js/xq-treegrid.js',
-            ],
         ],
         'css'=>[
             'xq-admin-layout'=>[
@@ -28,16 +24,10 @@ return [
                 'bootstrap-icons/font/bootstrap-icons.css',
                 'xq-admin-page/dist/css/xq-admin-page.css',
             ],
-            'xq-admin-treegrid'=>[
-                'bootstrap/dist/css/bootstrap.css',
-                'bootstrap-icons/font/bootstrap-icons.css',
-                'xq-treegrid/dist/css/xq-treegrid.css',
-            ]
         ],
         'directory'=>[
-			'images'=>['xq-treegrid/dist/assets/images'],
 			'css/fonts'=>[
-					'bootstrap-icons/font/fonts'
+				'bootstrap-icons/font/fonts'
 			],
 		],
     ]
