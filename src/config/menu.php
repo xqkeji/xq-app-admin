@@ -5,33 +5,33 @@ return [
 		[
 			'url'=>'config/update_config',
 			'title'=>'系统配置',
-			'icon'=>'fas fa-cog',
+			'icon'=>'bi bi-gear-fill',
 		],
 		[
 			'url'=>'config/update_statics',
 			'title'=>'更新静态文件',
-			'icon'=>'fas fa-sync-alt',
+			'icon'=>'bi bi-arrow-repeat',
 		],
 		[
 			'url'=>'user/admin',
 			'title'=>'管理员管理',
-			'icon'=>'fa fa-user',
+			'icon'=>'bi bi-person-fill',
 		],
 		[
 			'url'=>'user_role/admin',
 			'title'=>'角色管理',
-			'icon'=>'fas fa-object-group',
+			'icon'=>'bi bi-people-fill',
 		],
 		[
 			'url'=>'user/change_password',
 			'title'=>'修改密码',
-			'icon'=>'fa fa-key',
+			'icon'=>'bi bi-key-fill',
 		],
 		[
 			'url'=>'user/logout',
 			'title'=>'退出登录',
 			'class'=>'xq-logout',
-			'icon'=>'fas fa-sign-out-alt',
+			'icon'=>'bi bi-sign-turn-left-fill',
 		],
 	],
 	
