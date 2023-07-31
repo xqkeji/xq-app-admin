@@ -17,6 +17,11 @@ return [
 				],
 				[
 					'text',
+					'name'=>'site_mini_name',
+					'text'=>'网站商标名称',
+				],
+				[
+					'text',
 					'name'=>'site_domain',
 					'text'=>'网站域名',
 				],
