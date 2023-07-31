@@ -15,7 +15,7 @@
 	<div id="xq-header" class="row no-gutters bg-success bg-gradient fixed-top align-items-center">
 		<!--左边-->
 		<div class="col-2 text-center">
-			<a target="_blank" href="http://www.xqkeji.cn/" class="brand-link text-decoration-none" >
+			<a target="_blank" href="<?=$this->request->getScheme()?>://<?=xq_c('config','site_domain','www.xqkeji.cn')?>/" class="brand-link text-decoration-none" >
 				<span class="border border-white rounded ml-4"><?=xq_c('config','site_mini_name','新齐')?></span>
 				<span class="brand-text font-weight-light xq-desc"><?=xq_c('config','site_name','通用后台管理系统')?></span>
 			</a>
