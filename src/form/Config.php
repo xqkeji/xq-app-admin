@@ -30,6 +30,13 @@ return [
 					'name'=>'site_logo',
 					'text'=>'网站LOGO',
 				],
+				[
+					'text_area',
+					'name'=>'site_intro',
+					'text'=>'网站简介',
+					'attr_rows'=>'8',
+					'attr_cols'=>'30',
+				],
 			],
 		],
 		[

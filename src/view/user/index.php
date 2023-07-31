@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?=xq_c('config','site_name')?>后台管理系统">
   <meta name="author" content="XqKeji">
-  <title><?=xq_c('config','site_name','新齐通用后台')?>管理系统</title>
+  <title><?=xq_c('config','site_name','新齐通用后台管理系统')?></title>
   <?=$this->getAssetsCss('xq-admin-layout')?>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<div class="col-2 text-center">
 			<a target="_blank" href="http://www.xqkeji.cn/" class="brand-link text-decoration-none" >
 				<span class="border border-white rounded ml-4"><?=xq_c('config','site_mini_name','新齐')?></span>
-				<span class="brand-text font-weight-light xq-desc"><?=xq_c('config','site_name','通用后台')?>管理系统</span>
+				<span class="brand-text font-weight-light xq-desc"><?=xq_c('config','site_name','通用后台管理系统')?></span>
 			</a>
 		</div>
 		<!--右边-->
