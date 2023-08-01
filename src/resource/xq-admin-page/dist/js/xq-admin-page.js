@@ -1,5 +1,5 @@
 /*!
- * xq-admin-page v1.0.1 (https://xqkeji.cn/demo/xq-admin-page)
+ * xq-admin-page v1.0.4 (https://xqkeji.cn/demo/xq-admin-page)
  * Author xqkeji.cn
  * LICENSE SSPL-1.0
  * Copyright 2023 xqkeji.cn
@@ -13,6 +13,7 @@
     checkAllClass: ".xq-table .xq-check-all",
     addBtnClass: ".xq-table .xq-add",
     editBtnClass: ".xq-edit",
+    viewBtnClass: ".xq-view",
     deleteBtnClass: ".xq-delete",
     copyBtnClass: ".xq-copy",
     batchBtnClass: ".xq-batch",
@@ -332,6 +333,42 @@
               }
               url = url.slice(0, Math.max(0, url.lastIndexOf("/")));
               url = url + "/edit/" + id;
+            }
+          }
+          window.location.href = url;
+        } else {
+          xqConfirm({
+            content: "\u627E\u4E0D\u5230tr\u7684id\u5C5E\u6027\uFF01"
+          });
+        }
+      });
+    }
+  };
+
+  // src/ts/xq-view.ts
+  var bindView = (element) => {
+    const viewBtnClass = getOption("viewBtnClass");
+    const view_btn = element.querySelector(viewBtnClass);
+    if (view_btn) {
+      view_btn.addEventListener("click", (event) => {
+        const target = event.currentTarget;
+        const table2 = getTable();
+        const pid = table2?.getAttribute("pid");
+        let id = element.getAttribute("id");
+        id = id.replace("xq_", "");
+        if (id) {
+          let url = target.getAttribute("xq-url");
+          if (!url) {
+            url = window.location.href;
+            if (url.includes(".html") || url.endsWith("/")) {
+              url = url.slice(0, Math.max(0, url.lastIndexOf("/")));
+              url = url + "/view.html?id=" + id;
+            } else {
+              if (pid) {
+                url = url.replace("/" + pid, "");
+              }
+              url = url.slice(0, Math.max(0, url.lastIndexOf("/")));
+              url = url + "/view/" + id;
             }
           }
           window.location.href = url;
@@ -1614,6 +1651,7 @@
     if (table2) {
       const tres = table2.querySelectorAll("tr");
       for (const tr of tres) {
+        bindView(tr);
         bindEdit(tr);
         bindDelete(tr);
         bindChange(tr);
