@@ -40,6 +40,36 @@ class Install
                 }
                 $mustInsert=true;
                 $manager = new Manager($uri,['serverSelectionTryOnce'=>false,'serverSelectionTimeoutMS'=>500,'connectTimeoutMS'=>500]);
+                //创建索引
+                $cmd = new Command([
+                    // 集合名
+                    'createIndexes' => 'admin_user',
+                    'indexes' => [
+                        [
+                            // 索引名
+                            'name' => 'admin_user_unique',
+                            // 索引字段数组
+                            'key' => [
+                                'username' => 1
+                            ],
+                            'unique'=>true,
+                        ],
+                    ],
+                ]);
+                $result = $manager->executeCommand('xqkeji_db', $cmd)->toArray();
+                if (!empty($result)) {
+                    $ok = intval($result[0]->ok);
+                    if($ok>0)
+                    {
+                        echo "创建管理员集合username字段唯一索引成功！\r\n";
+                    }
+                    else
+                    {
+                        echo "创建管理员集合username字段唯一索引失败！\r\n";
+                    }
+                }
+                //
+
                 $id = new ObjectId("58514b454a495f41444d494e");
                 $filter = ['_id' => $id];
                 $cmd = new Command([
