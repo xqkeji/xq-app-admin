@@ -56,7 +56,7 @@ class Install
                         ],
                     ],
                 ]);
-                $result = $manager->executeCommand('xqkeji_db', $cmd)->toArray();
+                $result = $manager->executeCommand($database, $cmd)->toArray();
                 if (!empty($result)) {
                     $ok = intval($result[0]->ok);
                     if($ok>0)
