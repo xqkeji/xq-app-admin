@@ -17,11 +17,6 @@ return [
 				],
 				[
 					'text',
-					'name'=>'site_mini_name',
-					'text'=>'网站商标名称',
-				],
-				[
-					'text',
 					'name'=>'site_domain',
 					'text'=>'网站域名',
 				],
@@ -29,13 +24,6 @@ return [
 					'fileinput',
 					'name'=>'site_logo',
 					'text'=>'网站LOGO',
-				],
-				[
-					'text_area',
-					'name'=>'site_intro',
-					'text'=>'网站简介',
-					'attr_rows'=>'8',
-					'attr_cols'=>'30',
 				],
 			],
 		],

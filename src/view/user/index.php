@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="<?=xq_c('config','site_name')?>后台管理系统">
+  <meta name="description" content="<?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?>">
   <meta name="author" content="XqKeji">
-  <title><?=xq_c('config','site_name','新齐通用后台管理系统')?></title>
+  <title><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></title>
   <?=$this->getAssetsCss('xq-admin-layout')?>
 </head>
 <body>
@@ -15,9 +15,9 @@
 	<div id="xq-header" class="row no-gutters bg-success bg-gradient fixed-top align-items-center">
 		<!--左边-->
 		<div class="col-2 text-center">
-			<a target="_blank" href="<?=$this->request->getScheme()?>://<?=xq_c('config','site_domain','www.xqkeji.cn')?>/" class="brand-link text-decoration-none" >
-				<span class="border border-white rounded ml-4"><?=xq_c('config','site_mini_name','新齐')?></span>
-				<span class="brand-text font-weight-light xq-desc"><?=xq_c('config','site_name','通用后台管理系统')?></span>
+			<a target="_blank" href="<?=xq_p('xq-app-site-url','https://www.xqkeji.cn/')?>" class="brand-link text-decoration-none" >
+				<span class="border border-white rounded ml-4"><?=xq_p('xq-app-mini-name','新齐')?></span>
+				<span class="brand-text font-weight-light xq-desc"><?=xq_p('xq-app-name','通用后台管理系统')?></span>
 			</a>
 		</div>
 		<!--右边-->
@@ -127,7 +127,7 @@
 <!--页面底部-->
 <footer id="xq-footer" class="row no-gutters fixed-bottom bg-light border">
 	<div class="col-8 ps-4">
-		<strong>Copyright &copy; <?=date('Y')?> &nbsp; &nbsp;<a href="https://www.xqkeji.cn/"><?=xq_p('xq-app-name','xq-app-name')?></a>. &nbsp; &nbsp;</strong>
+		<strong>Copyright &copy; <?=date('Y')?> &nbsp; &nbsp;<a href="<?=xq_p('xq-app-site-url','https://www.xqkeji.cn/')?>"><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></a>. &nbsp; &nbsp;</strong>
 		All rights reserved.
 	</div>
 	
