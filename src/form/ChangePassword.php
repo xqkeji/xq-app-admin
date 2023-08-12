@@ -4,6 +4,7 @@ return [
 	[
 		'template'=>'row',
 		'attr_class'=>'form-control',
+		'attr_required'=>'1',
 		[
 			'password','name'=>'password','text'=>'原登录密码','validators'=>[['required']],
 		],

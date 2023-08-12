@@ -13,6 +13,7 @@ return [
 					'text',
 					'text'=>'角色名',
 					'name'=>'rolename',
+					'attr_required'=>'1',
 					'validators'=>[
 						['required'],
 					],
@@ -23,9 +24,6 @@ return [
 					'name'=>'desc',
 					'attr_rows'=>3,
 					'attr_cols'=>20,
-					'validators'=>[
-						['required'],
-					],
 				],
 				'switch',
 			],

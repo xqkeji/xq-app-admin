@@ -14,6 +14,7 @@ return [
 					'text',
 					'text'=>'用户名',
 					'name'=>'username',
+					'attr_required'=>'1',
 					'validators'=>[
 						['required'],
 					],
@@ -24,9 +25,6 @@ return [
 					'text',
 					'text'=>'姓名',
 					'name'=>'fullname',
-					'validators'=>[
-						['required'],
-					],
 				],
 				'switch',
 				'roles',
