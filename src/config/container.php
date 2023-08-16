@@ -15,13 +15,13 @@ return [
         'css'=>[
             'xq-admin-layout'=>[
                 'bootstrap/css/bootstrap.min.css',
-                'bootstrap-icons/font/bootstrap-icons.min.css',
+                'bootstrap-icons/font/bootstrap-icons.css',
                 'overlayscrollbars/styles/overlayscrollbars.min.css',
                 'xq-admin-layout/css/xq-admin-layout.min.css',
             ],
             'xq-admin-page'=>[
                 'bootstrap/css/bootstrap.min.css',
-                'bootstrap-icons/font/bootstrap-icons.min.css',
+                'bootstrap-icons/font/bootstrap-icons.css',
                 'xq-admin-page/css/xq-admin-page.min.css',
             ],
         ],
