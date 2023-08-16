@@ -3,26 +3,26 @@ return [
 	'assets'=>[
         'js'=>[
             'xq-admin-layout'=>[
-                'bootstrap/dist/js/bootstrap.bundle.min.js',
+                'bootstrap/js/bootstrap.bundle.min.js',
                 'overlayscrollbars/browser/overlayscrollbars.browser.es5.min.js',
-                'xq-admin-layout/dist/js/xq-admin-layout.min.js',
+                'xq-admin-layout/js/xq-admin-layout.min.js',
             ],
             'xq-admin-page'=>[
-                'bootstrap/dist/js/bootstrap.bundle.min.js',
-                'xq-admin-page/dist/js/xq-admin-page.min.js',
+                'bootstrap/js/bootstrap.bundle.min.js',
+                'xq-admin-page/js/xq-admin-page.min.js',
             ],
         ],
         'css'=>[
             'xq-admin-layout'=>[
-                'bootstrap/dist/css/bootstrap.min.css',
+                'bootstrap/css/bootstrap.min.css',
                 'bootstrap-icons/font/bootstrap-icons.min.css',
                 'overlayscrollbars/styles/overlayscrollbars.min.css',
-                'xq-admin-layout/dist/css/xq-admin-layout.min.css',
+                'xq-admin-layout/css/xq-admin-layout.min.css',
             ],
             'xq-admin-page'=>[
-                'bootstrap/dist/css/bootstrap.min.css',
+                'bootstrap/css/bootstrap.min.css',
                 'bootstrap-icons/font/bootstrap-icons.min.css',
-                'xq-admin-page/dist/css/xq-admin-page.min.css',
+                'xq-admin-page/css/xq-admin-page.min.css',
             ],
         ],
         'directory'=>[
