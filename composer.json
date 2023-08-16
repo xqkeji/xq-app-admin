@@ -18,18 +18,7 @@
             {
                 "cmd":["xqkeji\\composer\\Asset","copyDirs"],
                 "param":[{
-                    "vendor/xqkeji/xq-app-admin/src/resource/captcha/":"resource/captcha/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap/":"resource/bootstrap/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap-icons/":"resource/bootstrap-icons/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap-select/":"resource/bootstrap-select/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/jquery/":"resource/jquery/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/overlayscrollbars/":"resource/overlayscrollbars/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/tinymce/":"resource/tinymce/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-layout/":"resource/xq-admin-layout/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-tab-form/":"resource/xq-tab-form/"
+                    "vendor/xqkeji/xq-app-admin/src/resource/captcha/":"resource/captcha/"
                 }]
             },
             {
@@ -40,35 +29,13 @@
             {
                 "cmd":["xqkeji\\composer\\Asset","rmDirs"],
                 "param":[{
-                    "resource/captcha/":"resource/captcha/",
-                    "resource/bootstrap/":"resource/bootstrap/",
-                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
-                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
-                    "resource/bootstrap-select/":"resource/bootstrap-select/",
-                    "resource/jquery/":"resource/jquery/",
-                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
-                    "resource/tinymce/":"resource/tinymce/",
-                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
-                    "resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "resource/xq-treegrid/":"resource/xq-treegrid/",
-                    "resource/xq-tab-form/":"resource/xq-tab-form/"
+                    "resource/captcha/":"resource/captcha/"
                 }]
             },
             {
                 "cmd":["xqkeji\\composer\\Asset","copyDirs"],
                 "param":[{
-                    "vendor/xqkeji/xq-app-admin/src/resource/captcha/":"resource/captcha/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap/":"resource/bootstrap/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap-icons/":"resource/bootstrap-icons/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/bootstrap-select/":"resource/bootstrap-select/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/jquery/":"resource/jquery/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/overlayscrollbars/":"resource/overlayscrollbars/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/tinymce/":"resource/tinymce/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-layout/":"resource/xq-admin-layout/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-treegrid/":"resource/xq-treegrid/",
-                    "vendor/xqkeji/xq-app-admin/src/resource/xq-tab-form/":"resource/xq-tab-form/"
+                    "vendor/xqkeji/xq-app-admin/src/resource/captcha/":"resource/captcha/"
                 }]
             }
         ],
@@ -76,24 +43,21 @@
             {
                 "cmd":["xqkeji\\composer\\Asset","rmDirs"],
                 "param":[{
-                    "resource/captcha/":"resource/captcha/",
-                    "resource/bootstrap/":"resource/bootstrap/",
-                    "resource/bootstrap-icons/":"resource/bootstrap-icons/",
-                    "resource/bootstrap-fileinput/":"resource/bootstrap-fileinput/",
-                    "resource/bootstrap-select/":"resource/bootstrap-select/",
-                    "resource/jquery/":"resource/jquery/",
-                    "resource/overlayscrollbars/":"resource/overlayscrollbars/",
-                    "resource/tinymce/":"resource/tinymce/",
-                    "resource/xq-admin-layout/":"resource/xq-admin-layout/",
-                    "resource/xq-admin-page/":"resource/xq-admin-page/",
-                    "resource/xq-treegrid/":"resource/xq-treegrid/",
-                    "resource/xq-tab-form/":"resource/xq-tab-form/"
+                    "resource/captcha/":"resource/captcha/"
                 }]
             }
         ]
     },
     "require": {
         "xqkeji/composer":"^1.0",
+        "xqkeji/xq-com-jquery":"^1.0",
+        "xqkeji/xq-com-bootstrap":"^1.0",
+        "xqkeji/xq-com-bootstrap-icons":"^1.0",
+        "xqkeji/xq-com-bootstrap-fileinput":"^1.0",
+        "xqkeji/xq-com-overlayscrollbars":"^1.0",
+        "xqkeji/xq-com-admin-layout":"^1.0",
+        "xqkeji/xq-com-admin-page":"^1.0",
+        "xqkeji/xq-com-tab-form":"^1.0",
         "xqkeji/xq-app-base": "^1.0",
         "xqkeji/xq-app-attach": "^1.0"
     }
