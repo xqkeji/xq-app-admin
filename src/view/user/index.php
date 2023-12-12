@@ -26,7 +26,7 @@
 				<!--模块菜单导航-->
 				<div class="col-10 p-0">
 					<ul id="xq-top-nav" class="nav"  >  
-						<?=\xqkeji\helper\Menu::getAdminTopMenu()?>
+          <?=\xqkeji\helper\Menu::getMenu('admin','top')?>
 					</ul>
 				</div>
 				<!--用户操作菜单-->
@@ -57,7 +57,7 @@
 <div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-2 p-0 bg-dark" id="xq-sidebar">
-			<?=\xqkeji\helper\Menu::getAdminNavMenu()?>
+        <?=\xqkeji\helper\Menu::getMenu('admin','nav')?>
         </div>
         <div class="col-10 p-0" id="xq-content">
             <!--管理页面Tab标签工具栏-->
