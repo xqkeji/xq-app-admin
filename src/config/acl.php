@@ -5,6 +5,7 @@ return [
 			'user'=>['admin','add','edit','delete','change','b_delete'],
 			'user_role'=>['admin','add','edit','delete','change','b_delete'],
 			'config'=>['update_config','update_statics'],
+			'email'=>['admin','add','edit','delete','change','b_delete','batch_test'],
 		],
 		'login'=>[
 			'user'=>['change_password','index','logout'],

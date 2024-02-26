@@ -1,6 +1,7 @@
 <?php
 return [
 	'form',
+	'name'=>'search_user',
 	'attr_method'=>'get',
 	'attr_class'=>'form-inline d-flex justify-content-end',
 	[

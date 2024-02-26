@@ -9,6 +9,11 @@ return [
 				'icon'=>'bi bi-gear-fill',
 			],
 			[
+				'url'=>'email/admin',
+				'title'=>'邮箱配置',
+				'icon'=>'bi bi-envelope-paper',
+			],
+			[
 				'url'=>'config/update_statics',
 				'title'=>'更新静态文件',
 				'icon'=>'bi bi-arrow-repeat',

@@ -59,6 +59,7 @@
         "xqkeji/xq-com-admin-page":"^1.0",
         "xqkeji/xq-com-tab-form":"^1.0",
         "xqkeji/xq-app-base": "^1.0",
-        "xqkeji/xq-app-attach": "^1.0"
+        "xqkeji/xq-app-attach": "^1.0",
+        "phpmailer/phpmailer": "^6.9"
     }
 }

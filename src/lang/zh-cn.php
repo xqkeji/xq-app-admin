@@ -53,4 +53,23 @@ return [
 	'admin user change_password title'=>'修改密码',
 	'admin user change_password success'=>'修改密码成功',
 	'admin user change_password failed'=>'修改密码失败',
+
+	//邮箱管理
+	'admin email admin title'=>'邮箱账号管理',
+	'admin email add title'=>'添加邮箱账号',
+	'admin email edit title'=>'编辑邮箱账号',
+	'admin email add success'=>'添加邮箱账号成功',
+	'admin email add failed'=>'添加邮箱账号失败',
+	'admin email edit success'=>'编辑管邮箱账号成功',
+	'admin email edit failed'=>'编辑邮箱账号失败',
+	'admin email delete success'=>'删除邮箱账号成功',
+	'admin email delete failed'=>'删除邮箱账号失败',
+	//邮箱管理权限
+	'admin module email auth'=>'邮箱账号管理',
+	'admin module email admin auth'=>'邮箱账号列表',
+	'admin module email add auth'=>'添加邮箱账号',
+	'admin module email edit auth'=>'编辑邮箱账号',
+	'admin module email delete auth'=>'删除邮箱账号',
+	'admin module email change auth'=>'修改邮箱账号状态',
+	'admin module email b_delete auth'=>'批量删除邮箱账号',
 ];

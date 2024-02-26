@@ -21,6 +21,11 @@ return [
 					'text'=>'网站域名',
 				],
 				[
+					'email',
+					'name'=>'site_email',
+					'text'=>'网站邮箱',
+				],
+				[
 					'fileinput',
 					'name'=>'site_logo',
 					'text'=>'网站LOGO',
