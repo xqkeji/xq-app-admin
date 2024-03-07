@@ -28,7 +28,11 @@
         </div>
     </div>
 </div>
-<?=$this->getAssetsJs('xq-admin-page')?>
+<?php
+echo $this->getAssetsJs('xq-admin-page');
+$this->outputAsset();
+?>
+
 </body>
 </html>
 
