@@ -69,6 +69,8 @@
         <div class="col-2 p-0 bg-dark" id="xq-sidebar">
         <?=\xqkeji\helper\Menu::getMenu('admin','nav')?>
         </div>
+         <!-- 移动端侧边栏遮罩 -->
+        <div class="sidebar-backdrop  d-lg-none" id="sidebar-backdrop"></div>
         <div class="col-10 p-0" id="xq-content">
             <!--管理页面Tab标签工具栏-->
             <div  class="row g-0">
