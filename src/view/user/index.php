@@ -139,12 +139,11 @@
 <!--页面底部-->
 <footer id="xq-footer" class="row no-gutters fixed-bottom bg-light border">
 	<div class="col-9 ps-2 ps-sm-4">
-		<strong> &copy; <?=date('Y')?> &nbsp; &nbsp;<a href="<?=xq_p('xq-app-site-url','https://www.xqkeji.cn/')?>"><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></a>. &nbsp; &nbsp;</strong>
-		All rights reserved.
+		<strong>&copy;<?=date('Y')?>&nbsp;&nbsp;<a href="<?=xq_p('xq-app-site-url','https://www.xqkeji.cn/')?>"><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></a>. &nbsp; &nbsp;</strong>
 	</div>
 	
     <div class="col-3 text-end pe-4">
-      <b>V</b> <?=xq_p('xq-app-version','1.1')?>
+      <b>V</b><?=xq_p('xq-app-version','1.1')?>
     </div>
 </footer>
 
