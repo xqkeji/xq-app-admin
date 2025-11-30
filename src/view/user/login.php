@@ -10,24 +10,26 @@
   <?=$this->getAssetsCss('xq-admin-page')?>
 </head>
 <body class="bg-dark">
-<div class="container-fluid">
+<div class="container-fluid py-0">
 	<div class="row justify-content-center align-items-center" style="height:100vh;">
-        <div class="col-4" style="margin-top:-5rem;">
-          <h2 class="text-center"><b><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></b></h2>
-          <div class="card">
-            <div class="card-body">
-              <p class="text-dark text-center" style="font-size:18px;">
-              后台登录
-              </p>
-              <?php
-				 $this->outputFlash();
-				 echo $form;
-			  ?>			
-            </div>
-          </div>
+      <div  class="col-12 px-0 sm:px-2" style="max-width: 500px;">
+      <h2 class="text-center"><b><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></b></h2>
+      <!-- /.login-logo -->
+      <div class="card">
+        <div class="card-body">
+          <p class="text-dark text-center" style="font-size:18px;">
+          后台登录
+          </p>
+          <?php
+				  $this->outputFlash();
+				  echo $form;
+			    ?>				
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 <?php
 echo $this->getAssetsJs('xq-admin-page');
 $this->outputAsset();

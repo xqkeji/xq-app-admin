@@ -13,8 +13,12 @@
 <!--页面顶部-->
 <div class="container-fluid">
 	<div id="xq-header" class="row no-gutters bg-success bg-gradient fixed-top align-items-center">
+    <!-- 移动端菜单按钮 -->
+    <button class="d-block d-lg-none btn text-white ms-2 col-2" id="mobile-menu-toggle">
+			<i class="bi bi-list"></i>
+		</button>
 		<!--左边-->
-		<div class="col-2 text-center">
+		<div class="col-2 text-center d-none d-lg-block">
 			<a target="_blank" href="<?=xq_p('xq-app-site-url','https://www.xqkeji.cn/')?>" class="brand-link text-decoration-none" >
 				<span class="border border-white rounded ml-4"><?=xq_p('xq-app-mini-name','新齐')?></span>
 				<span class="brand-text font-weight-light xq-desc"><?=xq_p('xq-app-name','通用后台管理系统')?></span>
@@ -24,10 +28,16 @@
 		<div class="col-10">
 			<div class="row">
 				<!--模块菜单导航-->
-				<div class="col-10 p-0">
+				<div class="col-10 p-0 d-none d-lg-block">
 					<ul id="xq-top-nav" class="nav"  >  
           <?=\xqkeji\helper\Menu::getMenu('admin','top')?>
 					</ul>
+				</div>
+        <!-- 移动端模块下拉菜单 -->
+				<div class="col-10 p-0 d-block d-lg-none">
+					<div class="dropdown">
+						<?=\xqkeji\helper\Menu::getMenu('admin','top-mobile')?>
+					</div>
 				</div>
 				<!--用户操作菜单-->
 				<div class="col-2 d-flex justify-content-end pe-3">
@@ -126,12 +136,12 @@
 <!--管理页面内容结束-->
 <!--页面底部-->
 <footer id="xq-footer" class="row no-gutters fixed-bottom bg-light border">
-	<div class="col-8 ps-4">
+	<div class="col-9 ps-2 ps-sm-4">
 		<strong>Copyright &copy; <?=date('Y')?> &nbsp; &nbsp;<a href="<?=xq_p('xq-app-site-url','https://www.xqkeji.cn/')?>"><?=xq_p('xq-app-mini-name','新齐').xq_p('xq-app-name','通用后台管理系统')?></a>. &nbsp; &nbsp;</strong>
 		All rights reserved.
 	</div>
 	
-    <div class="col-4 text-end pe-4">
+    <div class="col-3 text-end pe-4">
       <b>Version</b> <?=xq_p('xq-app-version','1.0')?>
     </div>
 </footer>
