@@ -1,5 +1,5 @@
 <?php
-namespace xqkeji\app\admin\user;
+namespace xqkeji\app\admin\controller\user;
 use xqkeji\mvc\action\b\Delete;
 class BDelete extends Delete
 {
