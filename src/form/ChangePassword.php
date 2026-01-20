@@ -1,28 +1,33 @@
 <?php
-return [
-	'form',
-	[
-		'template'=>'row',
-		'attr_class'=>'form-control',
-		'attr_required'=>'1',
+namespace xqkeji\app\admin\form;
+use xqkeji\form\Form;
+class ChangePassword extends Form
+{
+	protected $name = 'change_password';
+	protected $el=[
 		[
-			'password','name'=>'password','text'=>'原登录密码','validators'=>[['required']],
+			'@Password',
+			'text'=>'原登录密码',
 		],
 		[
-			'password','name'=>'new_password','text'=>'新登录密码','validators'=>[['required']],
+			'@Password',
+			'name'=>'new_password',
+			'text'=>'新登录密码',
 		],
 		[
-			'password','name'=>'confirm_password','text'=>'确认密码',
-			'validators'=>[
-				['required'],
+			'@ConfirmPassword',
+			'text'=>'确认密码',
+			'vt'=>[
+				'$required',
 				[
-					'confirm',
+					'$confirm',
 					'allowEmpty'=>false,
 					'with'=>'new_password',
-				]
+				],
 			],
 		],
-		'csrf',
-	],
-	
-];
+		'@Csrf',
+		'@SubmitReset',
+	];
+}
+

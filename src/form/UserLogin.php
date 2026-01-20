@@ -1,33 +1,50 @@
 <?php
-return [
-	'form',
-	'name'=>'login_form',
-	'foot'=>'',
-	[
-		'template'=>'admin_login',
-		'attr_class'=>'form-control',
-		'attr_required'=>true,
+namespace xqkeji\app\admin\form;
+use xqkeji\form\Form;
+class UserLogin extends Form
+{
+	protected $name = 'login_form';
+
+	protected $el = [
 		[
-			'import'=>'username',
-			'var_icon'=>'bi bi-person-circle',
-			'attr_placeholder'=>'请输入登录账号',
+			'@Username',
+			'vars'=>[
+				'icon'=>'bi bi-person-circle',
+			],
+			'attrs'=>[
+				'placeholder'=>'请输入登录账号',
+			],
+			'template'=>'AdminLoginInput',
 		],
 		[
-			'import'=>'password',
-			'var_icon'=>'bi bi-key-fill',
-			'attr_placeholder'=>'请输入登录密码',
+			'@Password',
+			'vars'=>[
+				'icon'=>'bi bi-key-fill',
+			],
+			'attrs'=>[
+				'placeholder'=>'请输入登录密码',
+			],
+			'template'=>'AdminLoginInput',
 		],
 		[
-			'import'=>'captcha',
-			'var_icon'=>'bi bi-file-code-fill',
+			'@Captcha',
+			'vars'=>[
+				'icon'=>'bi bi-file-code-fill',
+			],
+			'attrs'=>[
+				'placeholder'=>'请输入验证码',
+			],
+			'template'=>'AdminLoginInput',
 		],
-		'csrf',
+		'@Csrf',
 		[
-			'submit',
-			'template'=>'admin_login_btn',
-			'name'=>'submit',
-			'attr_value'=>'登录',
-			'attr_class'=>'btn btn-success'
+			'@Submit',
+			'attrs'=>[
+				'value'=>'登录',
+				'class'=>'btn btn-success',
+			],
+			'template'=>'AdminLoginBtn',
 		]
-	],
-];
+	];
+}
+

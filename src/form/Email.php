@@ -1,36 +1,39 @@
 <?php
-return [
-	'form',
-	[
-		'template'=>'row',
-		'attr_class'=>'form-control',
-		'attr_required'=>'1',
+namespace xqkeji\app\admin\form;
+use xqkeji\form\Form;
+class Email extends Form
+{
+	protected $name = 'email';
+	protected $el=[
 		[
-			'import'=>'title',
+			'@Title',
 			'name'=>'host',
 			'text'=>'服务器地址',
 		],
 		[
-			'import'=>'ordernum',
+			'@ordernum',
 			'name'=>'port',
 			'text'=>'发件端口',
 			'defaultValue'=>'465',
 		],
 		[
-			'import'=>'title',
+			'@Title',
 			'name'=>'nickname',
 			'text'=>'发件昵称',
 		],
 		[
-			'import'=>'username',
+			'@Username',
+			'name'=>'username',
 			'text'=>'邮箱账号',
 		],
 		[
-			'import'=>'password',
+			'@Password',
+			'name'=>'password',
 			'text'=>'邮箱密码',
 		],
-		'switch',
-		'csrf',
-	],
-	
-];
+		'@Switch',
+		'@Csrf',
+		'@SubmitReset',
+	];
+}
+

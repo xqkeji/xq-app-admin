@@ -1,61 +1,54 @@
 <?php
-return [
-	'tab_form',
-	[
+namespace xqkeji\app\admin\form;
+use xqkeji\form\TabForm;
+class UserRole extends TabForm
+{
+	protected $name = 'role_form';
+	protected $el=[
 		[
-			'tab',
+			'$Tab',
 			'name'=>'role_info',
 			'text'=>'基本信息',
-			[
-				'template'=>'row',
-				'attr_class'=>'form-control',
-				[	
-					'text',
-					'text'=>'角色名',
+			'el'=>[
+				[
+					'@Username',
 					'name'=>'rolename',
-					'attr_required'=>'1',
-					'validators'=>[
-						['required'],
-					],
+					'text'=>'角色名',
 				],
-				[	
-					'text_area',
-					'text'=>'角色描述',
+				[
+					'@Desc',
 					'name'=>'desc',
-					'attr_rows'=>3,
-					'attr_cols'=>20,
+					'text'=>'角色描述',
 				],
-				'switch',
+				'@Switch',
 			],
 		],
 		[
-			'tab',
+			'$Tab',
 			'name'=>'role_auth',
 			'text'=>'授权信息',
-			[
-				'template'=>'row',
-				'attr_class'=>'form-control',
-				'auth',
-				'csrf',
+			'el'=>[
+				'@Auth',
+				'@Csrf',
 			],
 		],
-	
-	],
-	'event'=>[
-		'beforeBind'=>function($form){
-			$controller=\xqkeji\App::getController();
-			$actionName=$controller->getActionName();
-			$data=$form->getData();
-			
-			if(!isset($data['status']))
-			{
-				$data['status']=0;
-			}
-			if(!isset($data['auth']))
-			{
-				$data['auth']=[];
-			}
-			$form->setData($data);
+		'@SubmitReset'
+	];
+	public static function beforeBind($form)
+	{
+		$controller=\xqkeji\App::getController();
+		$actionName=$controller->getActionName();
+		$data=$form->getData();
+		
+		if(!isset($data['status']))
+		{
+			$data['status']=0;
 		}
-	],
-];
+		if(!isset($data['auth']))
+		{
+			$data['auth']=[];
+		}
+		$form->setData($data);
+	}
+}
+

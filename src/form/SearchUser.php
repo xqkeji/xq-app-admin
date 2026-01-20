@@ -1,18 +1,19 @@
 <?php
-return [
-	'form',
-	'name'=>'search_user',
-	'attr_method'=>'get',
-	'attr_class'=>'d-flex flex-wrap justify-content-end gap-2',
-	[
+namespace xqkeji\app\admin\form;
+use xqkeji\form\Form;
+class SearchUser extends Form
+{
+	protected $name = 'search_user';
+	protected $attrs=[
+		'method'=>'get',
+		'class'=>'d-flex flex-wrap justify-content-end gap-2',
+	];
+	protected $el=[
 		[
-			'text',
-			'template'=>'search',
-			'text'=>'关键字：',
+			'@SearchKey',
 			'name'=>'xq-s-username|fullname,like',
-			'attr_class'=>'form-control me-2',
 		],
-		'list_search'
-	],
-	'foot'=>'',
-];
+		'@SearchSubmit',
+	];
+}
+
