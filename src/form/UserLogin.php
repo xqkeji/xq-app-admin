@@ -14,7 +14,7 @@ class UserLogin extends Form
 			'attrs'=>[
 				'placeholder'=>'请输入登录账号',
 			],
-			'template'=>'AdminLoginInput',
+			'template'=>'@AdminLogin',
 		],
 		[
 			'@Password',
@@ -24,7 +24,7 @@ class UserLogin extends Form
 			'attrs'=>[
 				'placeholder'=>'请输入登录密码',
 			],
-			'template'=>'AdminLoginInput',
+			'template'=>'@AdminLogin',
 		],
 		[
 			'@Captcha',
@@ -34,16 +34,17 @@ class UserLogin extends Form
 			'attrs'=>[
 				'placeholder'=>'请输入验证码',
 			],
-			'template'=>'AdminLoginInput',
+			'template'=>'@AdminLogin',
 		],
 		'@Csrf',
 		[
-			'@Submit',
+			'$Submit',
 			'attrs'=>[
 				'value'=>'登录',
 				'class'=>'btn btn-success',
+				'style'=>'',
 			],
-			'template'=>'AdminLoginBtn',
+			'template'=>'@AdminLoginBtn',
 		]
 	];
 }

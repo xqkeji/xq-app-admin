@@ -18,7 +18,7 @@ class ChangePassword extends Form
 			'@ConfirmPassword',
 			'text'=>'确认密码',
 			'vt'=>[
-				'$required',
+				['$required'],
 				[
 					'$confirm',
 					'allowEmpty'=>false,
