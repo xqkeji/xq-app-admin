@@ -1,5 +1,5 @@
 <?php
-namespace xqkeji\app\base\form\element;
+namespace xqkeji\app\admin\table\element;
 use xqkeji\form\element\Div;
 class ListAddDelete extends Div
 {

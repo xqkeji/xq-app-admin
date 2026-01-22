@@ -1,5 +1,5 @@
 <?php
-namespace xqkeji\app\admin\form\element;
+namespace xqkeji\app\admin\table\element;
 use xqkeji\form\element\ListItem;
 class ListToolbar extends ListItem
 {
