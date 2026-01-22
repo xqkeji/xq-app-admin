@@ -1,6 +1,7 @@
 <?php
 namespace xqkeji\app\admin\table;
-class ListEmail extends BaseList
+use xqkeji\form\Table;
+class ListEmail extends Table
 {
     protected $name = 'list_email';
 	protected $el = [

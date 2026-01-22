@@ -39,6 +39,7 @@ class UserLogin extends Form
 		'@Csrf',
 		[
 			'$Submit',
+			'name'=>'submit',
 			'attrs'=>[
 				'value'=>'登录',
 				'class'=>'btn btn-success',
