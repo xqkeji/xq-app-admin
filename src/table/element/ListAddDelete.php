@@ -1,7 +1,7 @@
 <?php
 namespace xqkeji\app\admin\table\element;
-use xqkeji\form\element\Div;
-class ListAddDelete extends Div
+use xqkeji\form\element\TableDiv;
+class ListAddDelete extends TableDiv
 {
 	protected $name = 'list-add-delete';
 	protected $attrs= [
@@ -25,7 +25,7 @@ class ListAddDelete extends Div
 			],
 		],
 		[
-			'$BatchDelete',
+			'$Button',
 			'name'=>'batch_test',
 			'attrs'=>[
 				'value'=>'发送测试邮件',

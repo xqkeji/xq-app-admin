@@ -10,7 +10,7 @@ class ListToolbar extends ListItem
     ];
     protected $el = [
         [
-            '$Div',
+            '$TableDiv',
             'name' => 'list-toolbar-content',
             'attrs' => [
                 'class' => 'd-flex',
