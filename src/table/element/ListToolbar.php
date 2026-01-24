@@ -1,7 +1,7 @@
 <?php
 namespace xqkeji\app\admin\table\element;
-use xqkeji\form\element\ListItem;
-class ListToolbar extends ListItem
+use xqkeji\form\element\Td;
+class ListToolbar extends Td
 {
     protected $name = "list-toolbar";
     protected $attrs = [

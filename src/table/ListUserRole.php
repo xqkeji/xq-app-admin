@@ -1,8 +1,10 @@
 <?php
 namespace xqkeji\app\admin\table;
-class ListUserRole extends BaseList
+use xqkeji\form\Table;
+class ListUserRole extends Table
 {
     protected $name = 'list_user_role';
+	protected $foot='@ListFoot';
 	protected $el = [
 		'@ListId',
 		[
@@ -18,6 +20,6 @@ class ListUserRole extends BaseList
 		'@ListCreateTime',
 		'@ListUpdateTime',
 		'@ListEditDelete',
-		'~ListFoot'
+		
 	];
 }

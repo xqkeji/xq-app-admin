@@ -4,11 +4,36 @@ use xqkeji\form\TabForm;
 class User extends TabForm
 {
 	protected $name = 'user_form';
-	public static function beforeBind($form)
+	protected $el=[
+		[
+			'$Tab',
+			'text'=>'基本信息',
+			'name'=>'user_info',
+			'el'=>[
+				'@Username',
+				'~Password',
+				'~ConfirmPassword',
+				'@Fullname',
+				'@SwitchCheck',
+				'@Roles',
+			]
+		],
+		[
+			'$Tab',
+			'text'=>'授权信息',
+			'name'=>'user_auth',
+			'el'=>[
+				'@Auth',
+				'@Csrf',
+			],
+		],
+		'@SubmitReset',
+	];
+	public function beforeBind()
 	{
 		$controller=\xqkeji\App::getController();
 		$actionName=$controller->getActionName();
-		$data=$form->getData();
+		$data=$this->getData();
 		
 		if($actionName=='edit')
 		{
@@ -34,31 +59,7 @@ class User extends TabForm
 		{
 			$data['auth']=[];
 		}
-		$form->setData($data);
+		$this->setData($data);
 	}
-	protected $el=[
-		[
-			'$Tab',
-			'text'=>'基本信息',
-			'name'=>'user_info',
-			'el'=>[
-				'@Username',
-				'~Password',
-				'~ConfirmPassword',
-				'@Fullname',
-				'@Switch',
-				'@Roles',
-			]
-		],
-		[
-			'$Tab',
-			'text'=>'授权信息',
-			'name'=>'user_auth',
-			'el'=>[
-				'@Auth',
-				'@Csrf',
-			],
-		],
-		'@SubmitReset',
-	];
+	
 }

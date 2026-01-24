@@ -4,6 +4,7 @@ use xqkeji\form\Table;
 class ListUser extends Table
 {
     protected $name = 'list_user';
+	protected $foot='@ListFoot';
 	protected $el = [
 		'@ListId',
 		'@ListUsername',
@@ -27,7 +28,7 @@ class ListUser extends Table
 			],
 		],
 		'@ListEditDelete',
-		'~ListFoot'
+		
 	];
 }
 

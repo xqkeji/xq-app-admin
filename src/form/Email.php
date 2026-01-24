@@ -31,7 +31,7 @@ class Email extends Form
 			'name'=>'password',
 			'text'=>'邮箱密码',
 		],
-		'@Switch',
+		'@SwitchCheck',
 		'@Csrf',
 		'@SubmitReset',
 	];

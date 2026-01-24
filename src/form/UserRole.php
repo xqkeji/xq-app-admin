@@ -20,7 +20,7 @@ class UserRole extends TabForm
 					'name'=>'desc',
 					'text'=>'角色描述',
 				],
-				'@Switch',
+				'@SwitchCheck',
 			],
 		],
 		[

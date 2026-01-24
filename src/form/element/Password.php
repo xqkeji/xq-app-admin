@@ -1,5 +1,5 @@
 <?php
-namespace xqkeji\app\admin\element;
+namespace xqkeji\app\admin\form\element;
 use xqkeji\form\element\Password as BasePassword;
 class Password extends BasePassword
 {
@@ -11,23 +11,24 @@ class Password extends BasePassword
 		'placeholder'=>'请输入密码',
 		'autocomplete'=>'new-password',
 	];
+	protected $template = '@row';
 	protected $filters=['string'];
 	protected $vt=[
 		[
 			'required',
 		]
 	];
-	public static function beforeAdd($element)
+	public function beforeAdd()
 	{
 		$controller=\xqkeji\App::getController();
 		$actionName=$controller->getActionName();
 		if($actionName=='edit')
 		{
-			$attributes=$element->getAttrs();
+			$attributes=$this->getAttrs();
 			unset($attributes['required']);
 			$attributes['placeholder']='请输入密码(不用修改密码时，不要填写)';
-			$element->setAttrs($attributes);
-			$element->setValidators([]);
+			$this->setAttrs($attributes);
+			$this->setValidators([]);
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <?php
-namespace xqkeji\app\admin\element;
+namespace xqkeji\app\admin\form\element;
 use xqkeji\form\element\Password;
 class ConfirmPassword extends Password
 {
@@ -8,9 +8,10 @@ class ConfirmPassword extends Password
 	protected $attrs=[
 		'class'=>'form-control',
 		'required'=>1,
-		'placeholder'=>'请输入密码',
+		'placeholder'=>'请输入确认密码',
 		'autocomplete'=>'new-password',
 	];
+	protected $template = '@row';
 	protected $filters=['string'];
 	protected $vt=[
 		[
@@ -19,18 +20,18 @@ class ConfirmPassword extends Password
 			'with'=>'password',
 		]
 	];
-	public static function beforeAdd($element)
+	public  function beforeAdd()
 	{
 		$controller=\xqkeji\App::getController();
 		$actionName=$controller->getActionName();
 		if($actionName=='edit')
 		{
-			$attributes=$element->getAttrs();
+			$attributes=$this->getAttrs();
 			unset($attributes['required']);
 			$attributes['placeholder']='请输入确认密码(不用修改密码时，不要填写)';
-			$element->setAttrs($attributes);
-			$validators=$element->getValidators();
-			$validator=$validators[0];
+			$this->setAttrs($attributes);
+			$validators=$this->getValidators();
+			$validator=$validators['$confirm'];
 			$validator->setOption('allowEmpty',true);
 		}
 	}
