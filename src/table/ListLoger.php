@@ -1,9 +1,9 @@
 <?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
-class ListLog extends Table
+class ListLoger extends Table
 {
-    protected $name = 'list_log';
+    protected $name = 'list_loger';
 	protected $el = [
 		'@ListId',
 		[
