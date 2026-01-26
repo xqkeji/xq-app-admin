@@ -21,6 +21,9 @@ return [
 	'admin user edit failed'=>'编辑管理员失败',
 	'admin user delete success'=>'删除管理员成功',
 	'admin user delete failed'=>'删除管理员失败',
+	'admin user change success'=>'修改管理员状态成功',
+	'admin user change failed'=>'修改管理员状态失败',
+
 	//管理员管理权限
 	'admin module user auth'=>'管理员管理',
 	'admin module user admin auth'=>'管理员列表',
@@ -72,4 +75,12 @@ return [
 	'admin module email delete auth'=>'删除邮箱账号',
 	'admin module email change auth'=>'修改邮箱账号状态',
 	'admin module email b_delete auth'=>'批量删除邮箱账号',
+
+	//日志管理
+	'admin loger admin title'=>'管理',
+
+	//邮箱管理权限
+	'admin module loger auth'=>'日志管理',
+	'admin module loger admin auth'=>'日志列表',
+
 ];

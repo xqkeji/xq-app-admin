@@ -29,6 +29,11 @@ return [
 				'icon'=>'bi bi-people-fill',
 			],
 			[
+				'url'=>'loger/admin',
+				'title'=>'日志管理',
+				'icon'=>'bi bi-activity',
+			],
+			[
 				'url'=>'user/change_password',
 				'title'=>'修改密码',
 				'icon'=>'bi bi-key-fill',
