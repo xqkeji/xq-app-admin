@@ -4,6 +4,7 @@ use xqkeji\form\Table;
 class ListLoger extends Table
 {
     protected $name = 'list_loger';
+	protected $foot = '~ListFootLoger';
 	protected $el = [
 		'@ListId',
 		[
