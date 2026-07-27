@@ -8,11 +8,11 @@ class Install
 {
     public static function getRootPath():string
     {
-        return dirname(__DIR__,5);
+        return getcwd();
     }
     public static function getRootConfigPath():string
     {
-        return dirname(__DIR__,5).DIRECTORY_SEPARATOR.'config';
+        return self::getRootPath() . DIRECTORY_SEPARATOR . 'config';
     }
     public static function postInstall() : void
     {
