@@ -8,6 +8,9 @@ class UserLogin extends Form
 	protected $el = [
 		[
 			'@Username',
+			'vt'=>[
+				['required'],
+			],
 			'vars'=>[
 				'icon'=>'bi bi-person-circle',
 			],
