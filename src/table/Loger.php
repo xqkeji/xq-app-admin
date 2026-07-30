@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
 class Loger extends Table

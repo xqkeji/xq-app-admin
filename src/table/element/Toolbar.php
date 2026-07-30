@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 namespace xqkeji\app\admin\table\element;
 use xqkeji\form\element\Td;
 class Toolbar extends Td
