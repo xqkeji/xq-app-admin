@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table\element;
 use xqkeji\form\element\TableDiv;
-class ListAddDelete extends TableDiv
+class AddDelete extends TableDiv
 {
 	protected $name = 'list-add-delete';
 	protected $attrs= [

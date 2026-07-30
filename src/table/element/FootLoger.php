@@ -1,12 +1,12 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table\element;
 use xqkeji\form\element\ListFoot as BaseListFoot;
-class ListFoot extends BaseListFoot
+class FootLoger extends BaseListFoot
 {
-    protected $name = 'list_foot';
+    protected $name = 'list_foot_loger';
     protected $el = [
-        '@ListCheckAll',
-        '~ListToolbar'
+        '@CheckAll',
+        '~ToolbarLoger'
     ];
       
 }

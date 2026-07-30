@@ -1,25 +1,25 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
-class ListUserRole extends Table
+class UserRole extends Table
 {
     protected $name = 'list_user_role';
-	protected $foot='@ListFoot';
+	protected $foot='@Foot';
 	protected $el = [
-		'@ListId',
+		'@Id',
 		[
-			'@ListName',
+			'@Name',
 			'name'=>'rolename',
 			'text'=>'角色名',
 			'attrs'=>[
 				'style'=>'min-width:120px;',
 			],
 		],
-		'@ListDesc',
-		'@ListSwitch',
-		'@ListCreateTime',
-		'@ListUpdateTime',
-		'@ListEditDelete',
+		'@Desc',
+		'@Switch',
+		'@CreateTime',
+		'@UpdateTime',
+		'@EditDelete',
 		
 	];
 }

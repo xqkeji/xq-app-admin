@@ -1,14 +1,14 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
-class ListEmail extends Table
+class Email extends Table
 {
     protected $name = 'list_email';
-	protected $foot='~ListFoot';
+	protected $foot='~Foot';
 	protected $el = [
-		'@ListId',
+		'@Id',
 		[
-			'@ListName',
+			'@Name',
 			'name'=>'host',
 			'text'=>'服务器地址',
 			'attrs'=>[
@@ -16,7 +16,7 @@ class ListEmail extends Table
 			],
 		],
 		[
-			'@ListName',
+			'@Name',
 			'name'=>'port',
 			'text'=>'发件端口',
 			'attrs'=>[
@@ -24,7 +24,7 @@ class ListEmail extends Table
 			],
 		],
 		[
-			'@ListName',
+			'@Name',
 			'name'=>'nickname',
 			'text'=>'发件昵称',
 			'attrs'=>[
@@ -32,14 +32,14 @@ class ListEmail extends Table
 			],
 		],
 		[
-			'@ListName',
+			'@Name',
 			'name'=>'username',
 			'text'=>'邮箱账号',
 			'attrs'=>[
 				'style'=>'min-width:120px;',
 			],
 		],
-		'@ListSwitch',
-		'@ListEditDelete',
+		'@Switch',
+		'@EditDelete',
 	];
 }

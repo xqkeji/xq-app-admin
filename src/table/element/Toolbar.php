@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table\element;
 use xqkeji\form\element\Td;
-class ListToolbarLoger extends Td
+class Toolbar extends Td
 {
-    protected $name = "list-toolbar-loger";
+    protected $name = "list-toolbar";
     protected $attrs = [
         'colspan' => 99,
         'style' => 'text-align:left;',
@@ -16,15 +16,9 @@ class ListToolbarLoger extends Td
                 'class' => 'd-flex',
             ],
             'el' => [
-                [
-                    '$TableDiv',
-                    'name' => 'list-toolbar-div',
-                    'attrs' => [
-                        'class'=>'me-auto',
-                    ],
-                ],
-                '@ListPager',
-                '@listPageSize'
+                '~AddDelete',
+                '@Pager',
+                '@PageSize'
             ],
         ]
     ];
