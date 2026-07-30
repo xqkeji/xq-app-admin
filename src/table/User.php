@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
 class User extends Table
@@ -9,7 +9,7 @@ class User extends Table
 		'@Id',
 		'@Username',
 		'@Fullname',
-		'@Switch',
+		'@SwitchCheck',
 		[
 			'@Name',
 			'name'=>'login_counts',

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
 class Email extends Table
@@ -39,7 +39,7 @@ class Email extends Table
 				'style'=>'min-width:120px;',
 			],
 		],
-		'@Switch',
+		'@SwitchCheck',
 		'@EditDelete',
 	];
 }

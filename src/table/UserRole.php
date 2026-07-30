@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 namespace xqkeji\app\admin\table;
 use xqkeji\form\Table;
 class UserRole extends Table
@@ -16,7 +16,7 @@ class UserRole extends Table
 			],
 		],
 		'@Desc',
-		'@Switch',
+		'@SwitchCheck',
 		'@CreateTime',
 		'@UpdateTime',
 		'@EditDelete',
