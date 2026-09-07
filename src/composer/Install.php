@@ -117,9 +117,7 @@ class Install
         {
             throw new \Exception("the config file:\"$containerFile\" not exists!" , 404);
         }
-        \xqkeji\App::bootstrap(self::getRootPath() . DIRECTORY_SEPARATOR);
-        \xqkeji\App::getAssets()->outputAll();
-        echo "初始化管理后台js、css成功！\r\n";
+        
     }
     
 }
