@@ -4,7 +4,7 @@ use xqkeji\form\Table;
 class Email extends Table
 {
     protected $name = 'list_email';
-	protected $foot='~Foot';
+	protected $foot='~FootEmail';
 	protected $el = [
 		'@Id',
 		[

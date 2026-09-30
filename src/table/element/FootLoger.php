@@ -4,9 +4,8 @@ use xqkeji\form\element\ListFoot as BaseListFoot;
 class FootLoger extends BaseListFoot
 {
     protected $name = 'list_foot_loger';
-    protected $el = [
-        '@CheckAll',
-        '~ToolbarLoger'
+    protected $buttons = [
+        
     ];
       
 }
