@@ -34,6 +34,24 @@ return [
 				'icon'=>'bi bi-activity',
 			],
 			[
+				'url'=>'#',
+				'title'=>'附件管理',
+				'icon'=>'bi bi-paperclip',
+				'open'=>true,
+				'children'=>[
+					[
+						'url'=>'fileinput/admin',
+						'title'=>'文档/封面图附件管理',
+						'icon'=>'bi bi-file-earmark-text',
+					],
+					[
+						'url'=>'hugerte/admin',
+						'title'=>'编辑器附件管理',
+						'icon'=>'bi bi-pencil-square',
+					],
+				],
+			],
+			[
 				'url'=>'user/change_password',
 				'title'=>'修改密码',
 				'icon'=>'bi bi-key-fill',
