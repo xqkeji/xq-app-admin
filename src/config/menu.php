@@ -40,12 +40,12 @@ return [
 				'open'=>true,
 				'children'=>[
 					[
-						'url'=>'fileinput/admin',
+						'url'=>'attach/admin',
 						'title'=>'文档/封面图附件管理',
 						'icon'=>'bi bi-file-earmark-text',
 					],
 					[
-						'url'=>'hugerte/admin',
+						'url'=>'editor/admin',
 						'title'=>'编辑器附件管理',
 						'icon'=>'bi bi-pencil-square',
 					],

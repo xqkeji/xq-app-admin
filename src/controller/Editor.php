@@ -14,7 +14,7 @@ use xqkeji\app\admin\traits\FileUpload;
  * 接口约定：上传成功的响应为 {"location":"文件URL"}，失败为 {"location":"0","error":"..."}
  * 上传的文件写入 admin_hugerte 留档表（module_name 取前端 moduleName，未传时为 editor），便于统一统计/清理
  */
-class Hugerte extends Controller
+class Editor extends Controller
 {
 	use FileUpload;
 
@@ -33,7 +33,7 @@ class Hugerte extends Controller
 	public $moduleName='editor';//前端未传 moduleName 时的默认模块名
 	public $fileUrlField='file_url';
 	public $thumbUrlField='thumb_url';
-	public $modelTable='admin_hugerte';// 编辑器上传单独成表，须与 table/Hugerte.php 的 $name 一致
+	public $modelTable='editor';// 编辑器上传单独成表，须与 table/Editor.php 的 $name 一致
 	public $deleteMessage='删除文件成功';
 
 	// 编辑器上传单个文件，通过扩展名区分图片/文档并应用各自的大小限制
@@ -105,8 +105,8 @@ class Hugerte extends Controller
 			}
 			$thumb_url=$uploadUrl.str_replace('\\','/',$thumb_file);
 		}
-		// 编辑器页面一般不传 moduleName，留痕时归入 editor，便于按来源统计/清理
-		$moduleName=$this->post('moduleName');
+		// moduleName 由前端随上传链接带上；未传时留痕归入 editor，便于按来源统计/清理
+		$moduleName=$this->param('moduleName');
 		$this->saveRow($file,[
 			'file_url'=>$file_url,
 			'thumb_url'=>$thumb_url,
@@ -117,15 +117,16 @@ class Hugerte extends Controller
 	}
 
 	// 供 file_picker_callback 的浏览弹窗取数据：?types=jpg,png&page=1&page_size=20
-	// types 为扩展名列表（逗号分隔），不传则返回全部；只查本表（admin_hugerte），不限上传人
+	// types 为扩展名列表（逗号分隔），不传则返回全部；只查本表（editor），不限上传人
 	public function browse()
 	{
 		$this->view->disable();
+		$query=$this->request->GetQuery();
 		$allowed=array_merge($this->imageExtensions,$this->docExtensions);
 		$types=[];
-		if(isset($_GET['types']) && $_GET['types']!='')
+		if(isset($query['types']) && $query['types']!='')
 		{
-			foreach(explode(',',htmlspecialchars($_GET['types'])) as $type)
+			foreach(explode(',',htmlspecialchars($query['types'])) as $type)
 			{
 				$type=trim($type);
 				if(in_array($type,$allowed,true))
@@ -139,8 +140,8 @@ class Hugerte extends Controller
 				return;
 			}
 		}
-		$page=max((int)($_GET['page'] ?? 1),1);
-		$pageSize=(int)($_GET['page_size'] ?? 0)>0?(int)$_GET['page_size']:$this->browsePageSize;
+		$page=max((int)($query['page'] ?? 1),1);
+		$pageSize=(int)($query['page_size'] ?? 0)>0?(int)$query['page_size']:$this->browsePageSize;
 
 		$rows=$this->filterTypes($this->model(),$types)->order([$this->browseSortField=>'desc'])->limit(($page-1)*$pageSize,$pageSize)->findAll();
 		$rows=is_array($rows)?$rows:[];

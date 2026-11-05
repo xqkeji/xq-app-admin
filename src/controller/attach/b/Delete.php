@@ -1,5 +1,5 @@
 <?php
-namespace xqkeji\app\admin\controller\fileinput\b;
+namespace xqkeji\app\admin\controller\attach\b;
 
 use xqkeji\mvc\action\b\Delete as BaseAction;
 use xqkeji\app\admin\traits\FileDelete;

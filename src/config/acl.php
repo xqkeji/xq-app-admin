@@ -7,12 +7,12 @@ return [
 			'config'=>['update_config','update_statics'],
 			'email'=>['admin','add','edit','delete','change','b_delete','batch_test'],
 			'loger'=>['admin'],
-			'fileinput' => [
+			'attach' => [
                 'admin',
                 'delete',
                 'b_delete',
             ],
-			'hugerte' => [
+			'editor' => [
                 'admin',
                 'delete',
                 'b_delete',
@@ -20,7 +20,7 @@ return [
 		],
 		'login'=>[
 			'user'=>['change_password','index','logout'],
-			'admin'=>['welcome','test'],
+			'admin'=>['welcome'],
 			'doc' => [
                 'upload',
                 'delete',
@@ -29,7 +29,7 @@ return [
                 'upload',
                 'delete',
             ],
-            'hugerte' => [
+            'editor' => [
                 'upload',
                 'browse',
             ],

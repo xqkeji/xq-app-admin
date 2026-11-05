@@ -27,7 +27,7 @@ class Image extends Controller
 	public $fileType='image';
 	public $fileUrlField='image_url';
 	public $thumbUrlField='thumb_url';
-	public $modelTable='admin_fileinput';// 留档集合按「模块_控制器」命名，与 fileinput 列表同表
+	public $modelTable='attach';// 留档集合按「模块_控制器」命名，与 fileinput 列表同表
 	public $deleteMessage='删除图片成功';
 
 	// 落盘前校验图片宽高，并提前确认GD扩展可用
@@ -59,9 +59,10 @@ class Image extends Controller
 	protected function buildResult($file, $desPath, $destFile, $uploadUrl)
 	{
 		$thumbConfig=false;
-		if(isset($_GET['thumb']))
+		$query=$this->request->GetQuery();
+		if(isset($query['thumb']))
 		{
-			$thumb=htmlspecialchars($_GET['thumb']);
+			$thumb=htmlspecialchars($query['thumb']);
 			if(isset($this->thumbConfig[$thumb]))
 			{
 				$thumbConfig=$this->thumbConfig[$thumb];

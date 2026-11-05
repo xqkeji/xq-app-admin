@@ -3,11 +3,11 @@ namespace xqkeji\app\admin\table;
 
 use xqkeji\form\Table;
 
-class Fileinput extends Table
+class Attach extends Table
 {
     // 集合名按「模块_控制器」约定；Image/Doc 上传控制器的 $modelTable 必须与本值一致
-    protected $name = 'attach_fileinput';
-    protected $foot = '~FootFileinput';
+    protected $name = 'attach';
+    protected $foot = '~FootAttach';
 
     // 表格元素列表
     protected $el = [

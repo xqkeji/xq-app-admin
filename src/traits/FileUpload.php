@@ -25,9 +25,12 @@ trait FileUpload
 	// 落盘后保存记录并返回 bootstrap-fileinput 的回显数据，返回 null 表示已输出错误
 	abstract protected function buildResult($file, $desPath, $destFile, $uploadUrl);
 
-	protected function post(string $name): string
+	// 留痕参数：bootstrap-fileinput 走 POST，富文本编辑器把参数挂在上传 URL 上（GET），两处都要取
+	protected function param(string $name): string
 	{
-		return htmlspecialchars($_POST[$name] ?? '');
+		$post = $this->request->GetPost();
+		$query = $this->request->GetQuery();
+		return htmlspecialchars((string) ($post[$name] ?? $query[$name] ?? ''));
 	}
 
 	protected function errorJson(array $error)
@@ -94,11 +97,10 @@ trait FileUpload
 			'size' => $file->getSize(),
 			'auth_type' => $this->auth->getCurrentAuthType(),
 			'auth_id' => $this->auth->getCurrentAuthId(),
-			'module_name' => $this->post('moduleName'),
-			'controller_name' => $this->post('controllerName'),
-			'action_name' => $this->post('actionName'),
-			'action_params' => $this->post('actionParams'),
-			'source_id' => '',
+			'module_name' => $this->param('moduleName'),
+			'controller_name' => $this->param('controllerName'),
+			'action_name' => $this->param('actionName'),
+			'source_id' => $this->param('source_id'),
 		], $row));
 		return (string)$model->getKey();
 	}
@@ -154,7 +156,8 @@ trait FileUpload
 	{
 		$this->view->disable();
 		$www_path = call_user_func(['xqkeji\\App', 'getWwwPath']);
-		$key = htmlspecialchars($_POST['key'] ?? '');
+		$post = $this->request->GetPost();
+		$key = htmlspecialchars((string) ($post['key'] ?? ''));
 		$model = $this->model();
 		
 		$row = $model->find($key);
@@ -180,8 +183,15 @@ trait FileUpload
 		$upload_path = call_user_func(['xqkeji\\App', 'getUploadPath']);
 		$thumb_file = substr($destFile, 0, -strlen('.' . $extension)) . '_thumb.' . $extension;
 		$image = new \xqkeji\image\adapter\Gd($upload_path . $destFile);
-		$image->resize($thumbConfig['width'], $thumbConfig['height'], $thumbConfig['master']);
-		return $image->save($upload_path . $thumb_file) ? $thumb_file : null;
+		// 扩展内部调用 imagedestroy()，PHP 8.5 起会报 Deprecated 并混进上传接口的 JSON 响应；该函数自 8.0 起本就无作用
+		$reporting = error_reporting(E_ALL & ~E_DEPRECATED);
+		try {
+			$image->resize($thumbConfig['width'], $thumbConfig['height'], $thumbConfig['master']);
+			$saved = $image->save($upload_path . $thumb_file);
+		} finally {
+			error_reporting($reporting);
+		}
+		return $saved ? $thumb_file : null;
 	}
 
 	// 删除主文件时同步删除缩略图，控制器无 thumb_url 字段时自动跳过
