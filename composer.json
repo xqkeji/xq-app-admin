@@ -50,14 +50,14 @@
     },
     "require": {
         "xqkeji/composer":"^1.0",
-        "xqkeji/xq-com-jquery":"^1.0",
-        "xqkeji/xq-com-bootstrap":"^1.0",
-        "xqkeji/xq-com-bootstrap-icons":"^1.0",
-        "xqkeji/xq-com-bootstrap-fileinput":"^1.0",
-        "xqkeji/xq-com-overlayscrollbars":"^1.0",
-        "xqkeji/xq-com-admin-layout":"^1.0",
-        "xqkeji/xq-com-admin-page":"^1.0",
-        "xqkeji/xq-com-tab-form":"^1.0",
+        "xqkeji/xq-res-jquery":"^1.0",
+        "xqkeji/xq-res-bootstrap":"^1.0",
+        "xqkeji/xq-res-bootstrap-icons":"^1.0",
+        "xqkeji/xq-res-bootstrap-fileinput":"^1.0",
+        "xqkeji/xq-res-overlayscrollbars":"^1.0",
+        "xqkeji/xq-res-admin-layout":"^1.0",
+        "xqkeji/xq-res-admin-page":"^1.0",
+        "xqkeji/xq-res-tab-form":"^1.0",
         "xqkeji/xq-app-base": "^1.0",
         "phpmailer/phpmailer": "^6.9"
     }
