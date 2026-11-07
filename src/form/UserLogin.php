@@ -9,7 +9,7 @@ class UserLogin extends Form
 		[
 			'@Username',
 			'vt'=>[
-				['required'],
+				'$required',
 			],
 			'vars'=>[
 				'icon'=>'bi bi-person-circle',

@@ -14,11 +14,10 @@ class ConfirmPassword extends Password
 	protected $template = '@row';
 	protected $filters=['string'];
 	protected $vt=[
-		[
-			'$confirm',
+		'$confirm'=>[
 			'allowEmpty'=>false,
 			'with'=>'password',
-		]
+		],
 	];
 	public  function beforeAdd()
 	{

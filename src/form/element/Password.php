@@ -14,9 +14,7 @@ class Password extends BasePassword
 	protected $template = '@row';
 	protected $filters=['string'];
 	protected $vt=[
-		[
-			'required',
-		]
+		'$required',
 	];
 	public function beforeAdd()
 	{
