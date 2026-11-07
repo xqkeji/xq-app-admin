@@ -5,6 +5,7 @@ use xqkeji\mvc\builder\Model;
 class AuthId extends ListItem
 {
 	protected $name = 'auth_id';
+	protected $text='操作者';
 	protected $attrs= [
 		'style'=>'min-width:100px;',
 	];

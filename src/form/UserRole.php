@@ -34,21 +34,5 @@ class UserRole extends TabForm
 		],
 		'@SubmitReset'
 	];
-	public static function beforeBind($form)
-	{
-		$controller=\xqkeji\App::getController();
-		$actionName=$controller->getActionName();
-		$data=$form->getData();
-		
-		if(!isset($data['status']))
-		{
-			$data['status']=0;
-		}
-		if(!isset($data['auth']))
-		{
-			$data['auth']=[];
-		}
-		$form->setData($data);
-	}
 }
 

@@ -48,6 +48,34 @@ class Config extends TabForm
 				],
 			]
 		],
+		[
+			'$tab',
+			'name'=>'safe_info',
+			'text'=>'安全配置',
+			'el'=>[
+				[
+					'@SwitchCheck',
+					'name'=>'ip_whitelist_open',
+					'text'=>'开启IP白名单',
+				],
+				[
+					'@SwitchCheck',
+					'name'=>'email_code_open',
+					'text'=>'开启邮箱验证码',
+				],
+				[
+					'@SwitchCheck',
+					'name'=>'login_ban_open',
+					'text'=>'开启登录错误封IP',
+				],
+				[
+					'~LoginErrorCount',
+				],
+				[
+					'~LoginBanTime',
+				],
+			]
+		],
 		'@Csrf',
 		'@SubmitReset',
 	];

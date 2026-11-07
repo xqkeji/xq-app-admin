@@ -47,18 +47,6 @@ class User extends TabForm
 				unset($data['confirm_password']);
 			}
 		}
-		if(!isset($data['status']))
-		{
-			$data['status']=0;
-		}
-		if(!isset($data['roles']))
-		{
-			$data['roles']=[];
-		}
-		if(!isset($data['auth']))
-		{
-			$data['auth']=[];
-		}
 		$this->setData($data);
 	}
 	

@@ -9,7 +9,7 @@ class Email extends Model
     public function afterWrite($data=null)
 	{
 		$result=[];
-		$rows=$this->db()->select()->all();
+		$rows=$this->db()->where(['status'=>1])->findAll();
 		foreach($rows as $row)
 		{
 			$result[]=$row->toArray();
