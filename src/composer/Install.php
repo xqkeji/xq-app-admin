@@ -68,6 +68,33 @@ class Install
                         echo "创建管理员集合username字段唯一索引失败！\r\n";
                     }
                 }
+                //创建登录封禁集合的唯一索引：同一 IP + 作用域 对同一账号只有一行在计数
+                $cmd = new Command([
+                    'createIndexes' => 'admin_login_ban',
+                    'indexes' => [
+                        [
+                            'name' => 'admin_login_ban_ip_scope_username_unique',
+                            'key' => [
+                                'ip' => 1,
+                                'scope' => 1,
+                                'username' => 1
+                            ],
+                            'unique'=>true,
+                        ],
+                    ],
+                ]);
+                $result = $manager->executeCommand($database, $cmd)->toArray();
+                if (!empty($result)) {
+                    $ok = intval($result[0]->ok);
+                    if($ok>0)
+                    {
+                        echo "创建登录封禁集合ip+scope+username字段唯一索引成功！\r\n";
+                    }
+                    else
+                    {
+                        echo "创建登录封禁集合ip+scope+username字段唯一索引失败！\r\n";
+                    }
+                }
                 //
 
                 $id = new ObjectId("58514b454a495f41444d494e");

@@ -7,7 +7,7 @@ use xqkeji\mvc\builder\Model;
 class AllowEntry extends ListItem
 {
     protected $name = 'allow_entry';
-    protected $text = 'IP地址';
+    protected $text = 'IP地址或网段';
     protected $attrs = [
         'style' => 'min-width:200px;',
     ];

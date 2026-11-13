@@ -72,6 +72,9 @@ class Config extends TabForm
 					'~LoginErrorCount',
 				],
 				[
+					'~LoginIpErrorCount',
+				],
+				[
 					'~LoginBanTime',
 				],
 			]

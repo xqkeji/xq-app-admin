@@ -1,6 +1,6 @@
 <?php
 return [
-	'assets'=>[
+	'asset'=>[
         'js'=>[
             'xq-admin-layout'=>[
                 'bootstrap/js/bootstrap.bundle.min.js',

@@ -19,8 +19,8 @@ return [
                 'icon' => 'bi bi-emoji-smile',
             ],
             [
-                'url' => 'config/update_statics',
-                'title' => '更新静态文件',
+                'url' => 'config/update_cache',
+                'title' => '更新缓存',
                 'icon' => 'bi bi-arrow-repeat',
             ],
             [

@@ -20,7 +20,7 @@ return [
             ],
             'config' => [
                 'update_config',
-                'update_statics',
+                'update_cache',
             ],
             'email' => [
                 'admin',
