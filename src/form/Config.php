@@ -66,7 +66,7 @@ class Config extends TabForm
 				[
 					'@SwitchCheck',
 					'name'=>'image_code_open',
-					'text'=>'开启图象验证码',
+					'text'=>'开启图像验证码',
 				],
 				[
 					'@SwitchCheck',
