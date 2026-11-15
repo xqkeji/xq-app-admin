@@ -8,6 +8,8 @@ return [
 	'admin module config auth' => '配置管理',
 	'admin module config update_config auth' => '更新网站配置',
 	'admin module config update_cache auth' => '更新缓存文件',
+	'admin config update_cache failed' => '缓存文件更新失败',
+	'更新缓存' => '更新缓存',
 	'admin user admin title' => '管理员管理',
 	'admin user add title' => '添加管理员',
 	'admin user edit title' => '编辑管理员',
@@ -160,5 +162,5 @@ return [
 	'admin module editor admin auth' => '编辑器附件列表',
 	'admin module editor delete auth' => '删除编辑器附件',
 	'admin module editor b_delete auth' => '批量删除编辑器附件',
-	'admin config update_cache failed' => 'admin config update_cache failed',
+
 ];

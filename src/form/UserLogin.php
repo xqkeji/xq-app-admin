@@ -15,7 +15,7 @@ class UserLogin extends Form
 				'icon'=>'bi bi-person-circle',
 			],
 			'attrs'=>[
-				'placeholder'=>'请输入登录账号',
+				'placeholder'=>'请输入登录账号或邮箱',
 			],
 			'template'=>'@AdminLogin',
 		],
@@ -30,12 +30,22 @@ class UserLogin extends Form
 			'template'=>'@AdminLogin',
 		],
 		[
-			'@Captcha',
+			'~Captcha',
 			'vars'=>[
 				'icon'=>'bi bi-file-code-fill',
 			],
 			'attrs'=>[
 				'placeholder'=>'请输入验证码',
+			],
+			'template'=>'@AdminLogin',
+		],
+		[
+			'~Emailcode',
+			'vars'=>[
+				'icon'=>'bi bi-envelope-fill',
+			],
+			'attrs'=>[
+				'placeholder'=>'请输入邮箱码',
 			],
 			'template'=>'@AdminLogin',
 		],

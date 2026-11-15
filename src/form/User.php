@@ -14,6 +14,7 @@ class User extends TabForm
 				'~Password',
 				'~ConfirmPassword',
 				'@Fullname',
+				'@Email',
 				'@SwitchCheck',
 				'@Roles',
 			]

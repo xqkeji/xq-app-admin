@@ -6,7 +6,7 @@ use xqkeji\App;
 use xqkeji\Event;
 use xqkeji\mvc\model\Config;
 use xqkeji\mvc\builder\Model;
-use xqkeji\app\admin\model\Mailer;
+use xqkeji\helper\Mailer;
 class BatchTest extends Action
 {
 	protected $requestErrorMessage;
@@ -33,7 +33,7 @@ class BatchTest extends Action
 			}
 			$model=Model::getModel($modelName);
 			$data=$request->getPut();
-			$config=(array)Config::get('config');
+			$site_email=App::c('admin_config','site_email','support@xqkeji.cn');
 			$message='';
 			$mailer=[];
 			if(!empty($data))
@@ -49,7 +49,7 @@ class BatchTest extends Action
 							continue;
 						}
 						$mail=$record->toArray();
-						$sendResult=Mailer::send($mail['host'],$mail['port'],$mail['nickname'],$mail['username'],$mail['password'],$config['site_email'],'测试邮件','测试配置的邮箱能否正常发送邮件');
+						$sendResult=Mailer::send($mail['host'],$mail['port'],$mail['nickname'],$mail['username'],$mail['password'],$site_email,'测试邮件','测试配置的邮箱能否正常发送邮件');
 						$mailer[$mail['username']]=$sendResult;
 					}
 					

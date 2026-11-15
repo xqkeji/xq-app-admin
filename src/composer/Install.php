@@ -68,6 +68,36 @@ class Install
                         echo "创建管理员集合username字段唯一索引失败！\r\n";
                     }
                 }
+                //创建email唯一索引：用户表单没有邮箱输入口，多数行是无/空 email，
+                //纯 unique 会把多条缺失键当成相同的 null 而报 E11000，故限定只对非空邮箱生效
+                $cmd = new Command([
+                    // 集合名
+                    'createIndexes' => 'admin_user',
+                    'indexes' => [
+                        [
+                            // 索引名
+                            'name' => 'admin_user_email_unique',
+                            // 索引字段数组
+                            'key' => [
+                                'email' => 1
+                            ],
+                            'unique'=>true,
+                            'partialFilterExpression'=>['email'=>['$gt'=>'']],
+                        ],
+                    ],
+                ]);
+                $result = $manager->executeCommand($database, $cmd)->toArray();
+                if (!empty($result)) {
+                    $ok = intval($result[0]->ok);
+                    if($ok>0)
+                    {
+                        echo "创建管理员集合email字段唯一索引成功！\r\n";
+                    }
+                    else
+                    {
+                        echo "创建管理员集合email字段唯一索引失败！\r\n";
+                    }
+                }
                 //创建登录封禁集合的唯一索引：同一 IP + 作用域 对同一账号只有一行在计数
                 $cmd = new Command([
                     'createIndexes' => 'admin_login_ban',

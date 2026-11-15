@@ -80,6 +80,7 @@ return [
         'user' => [
             'login',
             'captcha',
+			'emailcode',
         ],
         'install' => [
             'index',

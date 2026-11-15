@@ -5,7 +5,6 @@ class Email extends Form
 {
 	protected $name = 'email';
 	protected $el=[
-		'@Id',
 		[
 			'@Title',
 			'name'=>'host',

@@ -65,6 +65,11 @@ class Config extends TabForm
 				],
 				[
 					'@SwitchCheck',
+					'name'=>'image_code_open',
+					'text'=>'开启图象验证码',
+				],
+				[
+					'@SwitchCheck',
 					'name'=>'login_ban_open',
 					'text'=>'开启登录错误封IP',
 				],
