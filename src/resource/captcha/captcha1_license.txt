@@ -1,5 +1,4 @@
-Copyright (c) 2010 by Peter Wiegel,  Open Font under Terms of following Free Software Licenses:
-GPL (General Public License) with font-exception and OFL (Open Font License
+Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
