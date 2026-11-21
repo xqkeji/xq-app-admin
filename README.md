@@ -30,7 +30,7 @@
 因此每个字体旁的许可全文 `captchaN_license.txt` 会随字体一同分发。
 
 > **字体是独立的第三方作品，不被本项目的 AGPL-3.0 / 商业双重授权覆盖，其条款也不因本项目的授权方式而改变。**
-> 下表 6 个字体全部为 OFL-1.1 或 Apache-2.0，均可免费用于商业产品，使用字体本身无需购买商业授权；
+> 下表 6 个字体全部为 OFL-1.1，均可免费用于商业产品，使用字体本身无需购买商业授权；
 > 但本项目的**代码**仍按上文《许可协议（双重授权）》执行。
 
 ### 字体清单
@@ -39,10 +39,10 @@
 | --- | --- | --- | --- |
 | `captcha0.ttf` | Space Mono（Version 1.003） | Copyright 2016 The Space Mono Project Authors | OFL-1.1 |
 | `captcha1.ttf` | Anton（Version 2.116） | Copyright 2020 The Anton Project Authors | OFL-1.1 |
-| `captcha2.ttf` | Permanent Marker（Version 1.001） | Copyright (c) 2010 Font Diner, Inc. | Apache-2.0 |
+| `captcha2.ttf` | Archivo Black（Version 1.006） | Copyright 2017 The Archivo Black Project Authors | OFL-1.1 |
 | `captcha3.ttf` | Alfa Slab One（Version 2.000） | Copyright 2016 The Alfa Slab One Project Authors，保留字体名「Alfa Slab」 | OFL-1.1 |
 | `captcha4.ttf` | PT Serif（Version 1.000W OFL） | Copyright (c) 2010 ParaType Ltd.，保留字体名「PT Sans」「PT Serif」「ParaType」 | OFL-1.1 |
-| `captcha5.ttf` | Special Elite（Version 1.001） | Copyright (c) 2010 Brian J. Bonislawsky DBA Astigmatic (AOETI) | Apache-2.0 |
+| `captcha5.ttf` | Bungee（Version 2.000） | Copyright 2023 The Bungee Project Authors | OFL-1.1 |
 
 字体名称、版本与版权均取自各 TTF 自身的 `name` 表，与所附许可全文一致。
 许可全文分别位于同目录的 `captcha0_license.txt` … `captcha5_license.txt`。
@@ -57,13 +57,12 @@
 | --- | --- | --- |
 | `captcha0.ttf` | `ofl/spacemono/SpaceMono-Regular.ttf` | `1cfa3653dc8ddb7aa9f4ef1c9c581e9516137e6e` |
 | `captcha1.ttf` | `ofl/anton/Anton-Regular.ttf` | `4d65707db9d8663ccfa99cd28cd3a4e0025be178` |
-| `captcha2.ttf` | `apache/permanentmarker/PermanentMarker-Regular.ttf` | `3218fc5b3d395c3a3fc207fdf17a27bb32af3242` |
+| `captcha2.ttf` | `ofl/archivoblack/ArchivoBlack-Regular.ttf` | `82d07de3b84ed4428f6a302b70f4b555148dfeb0` |
 | `captcha3.ttf` | `ofl/alfaslabone/AlfaSlabOne-Regular.ttf` | `0158f184619023509f750ad3def1c39be2bd7872` |
 | `captcha4.ttf` | `ofl/ptserif/PT_Serif-Web-Regular.ttf` | `5310691a999658437d6db608b9447d606598753e` |
-| `captcha5.ttf` | `apache/specialelite/SpecialElite-Regular.ttf` | `6654876f95f11cb2b55c7c4254727ef68dbea74c` |
+| `captcha5.ttf` | `ofl/bungee/Bungee-Regular.ttf` | `59dfddc539f9ebbaf5134c7b272970d88aba0ba9` |
 
-许可全文同样取自上游：`captcha0/1/3/4_license.txt` 与上游 `OFL.txt` 逐字节一致；
-`captcha2_license.txt`、`captcha5_license.txt` 是上游 Apache-2.0 `LICENSE.txt` 正文前置该字体的版权声明。
+许可全文同样取自上游：6 个 `captchaN_license.txt` 均与各自上游 `OFL.txt` 逐字节一致。
 
 复核方式（仓库根目录执行，输出应与上表一致；文本许可加 `--no-filters` 以跳过行尾归一）：
 
@@ -75,19 +74,19 @@ git hash-object --no-filters src/resource/captcha/captcha1_license.txt
 ### 再分发与使用义务
 
 - **保留声明**：再分发字体（含随产品打包、容器镜像分发）时必须一并保留版权声明与对应许可全文，
-  即 `captchaN_license.txt` 不可删除。OFL 第 2 条与 Apache-2.0 第 4 条均有此要求。
+  即 `captchaN_license.txt` 不可删除。OFL 第 2 条有此要求。
 - **不得单独销售字体**：OFL 第 1 条禁止把字体本身作为独立商品出售；
   作为软件包的一部分随产品分发或销售是允许的。
 - **修改后必须改名**：若子集化、增删字形或转换格式后再分发，OFL 第 3 条禁止继续使用保留字体名
-  （「Alfa Slab」「PT Sans」「PT Serif」「ParaType」）。Space Mono、Anton、Permanent Marker、
-  Special Elite 未声明保留字体名。当前 6 个文件均未修改，不触发该条款。
+  （「Alfa Slab」「PT Sans」「PT Serif」「ParaType」）。Space Mono、Anton、Archivo Black、
+  Bungee 未声明保留字体名。当前 6 个文件均未修改，不触发该条款。
 - **字体须仍以原许可分发，但渲染结果不受限**：OFL 第 5 条要求字体整体仍以 OFL 分发、不得改用其他许可；
   该条同时明确**不适用于用字体创建的文档**——本包渲染出的验证码图片属于此类，可随闭源商业产品分发。
 - **不得借作者名义背书**：OFL 第 4 条禁止以版权持有人或作者名义推广修改版。
 
 ### 历史版本替换掉的字体
 
-以下字体因许可不兼容、未获授权或来源不可追溯，已在对应版本替换为上表中的字体：
+以下字体因许可不兼容、未获授权、来源不可追溯或字形可读性差，已在对应版本替换为上表中的字体：
 
 | 版本 | 原文件 | 原字体 | 替换原因 |
 | --- | --- | --- | --- |
@@ -97,6 +96,8 @@ git hash-object --no-filters src/resource/captcha/captcha1_license.txt
 | v1.3.10 | `captcha5.ttf` | Sling 2.0（© 1994 STAR Retrieval Systems） | **All Rights Reserved**，未附任何授权，不可再分发 |
 | v1.3.11 | `captcha0.ttf` | Bitstream Vera Sans Mono（Release 1.10，Bitstream, Inc.） | 自成一格的 Bitstream Vera License，且文件来源无法逐字节验证；改用纯 OFL 的 Space Mono |
 | v1.3.11 | `captcha1.ttf` | TGL 0-17（Version 1.003 2010，Peter Wiegel） | `name` 表声明「GPL … AND OFL」，若按叠加解释，再分发字体文件本身须按 GPL 提供对应源码；改用纯 OFL 的 Anton |
+| v1.3.12 | `captcha2.ttf` | Permanent Marker（Version 1.001，Font Diner） | Apache-2.0 许可本身可用，但手写马克笔体笔画断裂、`F/I/U` 难辨，验证码可读性差；改用更清晰、可逐字节追溯的 OFL Archivo Black |
+| v1.3.12 | `captcha5.ttf` | Special Elite（Version 1.001，Astigmatic） | 同上：Apache-2.0 可用，但打字机做旧体边缘毛刺、`6` 变形，可读性差；改用更清晰的 OFL Bungee |
 
 > 仍在用 v1.3.10 及更早版本的用户请升级。composer 的 `post-package-update` 会先 `rmDirs` 清空宿主的
 > `resource/captcha/` 再 `copyDirs` 重新复制，正常更新即可移除上述旧字体，无需手工清理。
