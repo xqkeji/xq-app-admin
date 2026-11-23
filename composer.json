@@ -21,12 +21,6 @@
                     "vendor/xqkeji/xq-app-admin/src/resource/captcha/":"resource/captcha/"
                 }]
             },
-			{
-                "cmd":["xqkeji\\composer\\Asset","copyDirs"],
-                "param":[{
-                    "vendor/xqkeji/xq-app-admin/src/resource/image/":"www/asset/captcha/"
-                }]
-            },
             {
                 "cmd":["xqkeji\\app\\admin\\composer\\Install","postInstall"]
             }
@@ -38,22 +32,10 @@
                     "resource/captcha/":"resource/captcha/"
                 }]
             },
-			{
-                "cmd":["xqkeji\\composer\\Asset","rmDirs"],
-                "param":[{
-                    "www/asset/captcha/":"www/asset/captcha/"
-                }]
-            },
             {
                 "cmd":["xqkeji\\composer\\Asset","copyDirs"],
                 "param":[{
                     "vendor/xqkeji/xq-app-admin/src/resource/captcha/":"resource/captcha/"
-                }]
-            },
-			{
-                "cmd":["xqkeji\\composer\\Asset","copyDirs"],
-                "param":[{
-                    "vendor/xqkeji/xq-app-admin/src/resource/image/":"www/asset/captcha/"
                 }]
             }
         ],
@@ -62,12 +44,6 @@
                 "cmd":["xqkeji\\composer\\Asset","rmDirs"],
                 "param":[{
                     "resource/captcha/":"resource/captcha/"
-                }]
-            },
-			{
-                "cmd":["xqkeji\\composer\\Asset","rmDirs"],
-                "param":[{
-                    "www/asset/captcha/":"www/asset/captcha/"
                 }]
             }
         ]
@@ -79,6 +55,8 @@
         "xqkeji/xq-res-bootstrap-icons":"^1.0",
         "xqkeji/xq-res-bootstrap-fileinput":"^1.0",
         "xqkeji/xq-res-overlayscrollbars":"^1.0",
+		"xqkeji/xq-res-slide-captcha":"^1.1",
+		"xqkeji/xq-res-click-captcha":"^1.1",
         "xqkeji/xq-res-admin-layout":"^1.0",
         "xqkeji/xq-res-admin-page":"^1.0",
         "xqkeji/xq-res-tab-form":"^1.0",
