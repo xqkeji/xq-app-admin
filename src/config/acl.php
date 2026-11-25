@@ -81,6 +81,8 @@ return [
             'login',
             'captcha',
 			'emailcode',
+			'captchadata',
+			'captchacheck'
         ],
         'install' => [
             'index',

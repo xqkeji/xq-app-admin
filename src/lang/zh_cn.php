@@ -162,5 +162,7 @@ return [
 	'admin module editor admin auth' => '编辑器附件列表',
 	'admin module editor delete auth' => '删除编辑器附件',
 	'admin module editor b_delete auth' => '批量删除编辑器附件',
-
+	'is not a valid click captcha' => 'is not a valid click captcha',
+	'请先完成人机验证' => '请先完成人机验证',
+	'is not a valid slide captcha' => 'is not a valid slide captcha',
 ];
