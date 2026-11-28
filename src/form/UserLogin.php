@@ -30,7 +30,7 @@ class UserLogin extends Form
 			'template'=>'@AdminLogin',
 		],
 		[
-			'@SlideCaptcha',
+			'~Captcha',
 			'vars'=>[
 				'icon'=>'bi bi-file-code-fill',
 			],

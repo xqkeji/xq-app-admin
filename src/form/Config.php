@@ -64,9 +64,16 @@ class Config extends TabForm
 					'text'=>'开启邮箱验证码',
 				],
 				[
-					'@SwitchCheck',
-					'name'=>'image_code_open',
-					'text'=>'开启图像验证码',
+					'$Radio',
+					'name'=>'captcha_type',
+					'text'=>'普通验证码类型',
+					'template'=>'@check',
+					'items'=>[
+						0=>'无验证码',
+						'图像验证码',
+						'滑块验证码',
+						'点击验证码'
+					],
 				],
 				[
 					'@SwitchCheck',
